@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'react-materialize';
-import HomeBanner from '../Img/HomeBanner';
 
 class Home extends Component {
   render() {
@@ -32,11 +31,6 @@ class Home extends Component {
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
               </Col>
 
-              {/* 'HomeBanner is an image' */}
-              <Col s={12} className='grid-text'>
-                <HomeBanner />
-              </Col>
-              
               <Col s={12} className='grid-text'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
