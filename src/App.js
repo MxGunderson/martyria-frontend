@@ -6,16 +6,15 @@ import Header from './Components/Header';
 import TextBody from './Components/TextBody';
 import Footer from './Components/Footer';
 
-
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div className="App">
-        <Header />
-        <TextBody />
-        <Footer />
-      </div>
+        <div className="App">
+          <Header />
+          <TextBody />
+          <Footer />
+        </div>
       </BrowserRouter>
     );
   }

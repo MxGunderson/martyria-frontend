@@ -1,7 +1,6 @@
 import React from 'react';
 import 'react-materialize';
-import Row from 'react-materialize/lib/Row';
-import Col from 'react-materialize/lib/Col';
+import {Col, Row} from 'react-materialize/';
 
 function TextBody() {
     return (
@@ -44,7 +43,5 @@ function TextBody() {
 
     )
 }
-
-//testing
 
 export default TextBody;
