@@ -23,7 +23,7 @@ class Signup extends Component {
         <Row>
           <Input s={6} label="Password" validate defaultValue='' />
         </Row>
-        <button class="btn waves-effect waves-light" type="submit"      name="action">Submit
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
           <i class="material-icons right">send</i>
         </button>
         </Row>
