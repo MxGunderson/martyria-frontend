@@ -7,6 +7,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
+
 // This is a Header component for Navigation //
 
 function Header() {
