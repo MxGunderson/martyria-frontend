@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'react-materialize';
 import './App.css';
 import Header from './Components/Header';
+import Home from './Components/Pages/Home';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <Router>
       <div className="App">
         <Header />
+        <div className="container">
+        <Switch>
+          <Route exact path="/" component={Home}/>
+        </Switch>
+        </div>
       </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
