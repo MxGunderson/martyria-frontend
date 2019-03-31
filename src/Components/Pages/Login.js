@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import 'react-materialize'
 
 class Login extends Component {
+  
   render() {
     return (
       <div>
-        <h1>Welcome Back!</h1>
+        
       </div>
     )
   }
 }
 
-export default Login;
+export default Login

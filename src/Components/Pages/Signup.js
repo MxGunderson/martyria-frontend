@@ -1,39 +1,51 @@
 import React, { Component } from 'react'
-import {Input, Row} from 'react-materialize';
-import '../../../src/App.css';
+import 'react-materialize';
 
 class Signup extends Component {
-  state = {
-    name: '',
+ state = {
     email: '',
-    userName:'',
-    password: ''
+    password: '',
+    firstName: '',
+    lastName: '',
   }
-  onChange = e => this.setState({[e.target.name]: e.target.value});
- 
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+  }
+  
   render() {
-    const { name, email, userName, password } = this.state; 
     return (
       <div>
-        <div className="form-group">
-        <h1>Signup!</h1>
-        <Row className="sign-up">
-        <Row>
-          <Input s={6} label="Name" type="text" name="name" value= {name} onChange={this.onChange} validate defaultValue='' />
-        </Row>
-        <Row>
-          <Input s={6} label="Email" type="email" name="email" value={email} onChange={this.onChange}  validate defaultValue='' />
-        </Row>
-        <Row>
-          <Input s={6} label="User Name" type="text" name="userName" value={userName} onChange={this.onChange}  validate defaultValue='' />
-        </Row>
-        <Row>
-          <Input s={6} label="Password" type="text" name="password" value={password} onChange={this.onChange}  validate defaultValue='' />
-        </Row>
-        <button className="btn waves-effect waves-light" type="submit" value="Add Contact">Submit
-          <i className="material-icons right">send</i>
-        </button>
-        </Row>
+        <div className="container">
+          <form onSubmit={this.handleSubmit} className="white">
+            <h5 className="grey-text-darken-3">Signup!</h5>
+            <div className="input-field">
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" id="firstName" onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" id="lastName" onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+              <label htmlFor="password">Password</label>
+              <input type="password" id="password" onChange={this.handleChange}/>
+            </div>
+            <div className="input-field">
+              <button className="btn blu lighten-1 z-depth-0 ">Signup!</button>
+            </div>
+            
+          </form>
+
         </div>
       </div>
     )
