@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import 'react-materialize';
 
 class Signup extends Component {
- state = {
+  state = {
     email: '',
     password: '',
     firstName: '',
@@ -17,7 +17,7 @@ class Signup extends Component {
     e.preventDefault();
     console.log(this.state);
   }
-  
+
   render() {
     return (
       <div>
@@ -38,14 +38,12 @@ class Signup extends Component {
             </div>
             <div className="input-field">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" onChange={this.handleChange}/>
+              <input type="password" id="password" onChange={this.handleChange} />
             </div>
             <div className="input-field">
               <button className="btn blu lighten-1 z-depth-0 ">Signup!</button>
             </div>
-            
           </form>
-
         </div>
       </div>
     )
