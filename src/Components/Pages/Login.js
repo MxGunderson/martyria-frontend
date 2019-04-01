@@ -4,7 +4,7 @@ import 'react-materialize'
 class Login extends Component {
   state = {
     email: '',
-    passWord: ''
+    password: '',
   }
 
 
