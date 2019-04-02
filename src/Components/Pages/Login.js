@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router';
 import 'react-materialize'
 
 class Login extends Component {
@@ -18,11 +19,19 @@ class Login extends Component {
   //console logging to check if submit works
   //until we can get an api up and working
   handleSubmit = (e) => {
-    e.prevetDefault();
+    e.preventDefault();
+    this.setState({ fireRedirect: true })
+
     console.log(this.state);
   }
 
+  validateForm() {
+    return this.state.email && this.state.password;
+  }
+
   render() {
+    const { from } = this.props.location.state || '/User'
+    const { fireRedirect } = this.state
     return (
       <div className='container'>
         <form onSubmit={this.handleSubmit} className='white'>
@@ -36,10 +45,15 @@ class Login extends Component {
             <input type="password" id="password" onChange={this.handleChange} />
           </div>
           <div className='input-field'>
-            <button className='btn blu lighten-1 z-depth-o'>Login</button>
+
+            {/* this make the 'Login' btn greyed out until all require info is entered */}
+            <button className='btn blu lighten-1 z-depth-o' disabled={!this.validateForm()}>Login</button>
+            {fireRedirect && (
+              <Redirect to={from || '/User'} />
+            )}
           </div>
           <br />
-          <button className='btn blu lighten-1 z-depth-o'>Forgot email or password? </button>
+          <button className='btn blu lighten-1 z-depth-o' >Forgot email or password? </button>
         </form>
       </div>
     )
