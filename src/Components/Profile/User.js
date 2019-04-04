@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'react-materialize';
+import Posts from './Posts'
 
 class User extends Component {
     render() {
@@ -22,8 +23,11 @@ class User extends Component {
                             incididunt ut labore et dolore magna aliqua.
                              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u</p>
                     </Col>
+                    <Col s={6}>
+                    </Col> 
 
                 </Row>
+                        <Posts/>
 
 
             </div>
