@@ -10,7 +10,13 @@ const reducer = (state, action) => {
         ...state,
         posts: state.posts.filter(post => 
         post.id !== action.payload)
-      }
+      };
+      case 'ADD_POST':
+      return {
+        ...state,
+        posts: [action.payload, 
+        ...state.posts]
+      };
       default:
       return state;
   }

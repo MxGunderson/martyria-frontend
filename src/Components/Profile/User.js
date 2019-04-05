@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'react-materialize';
 import Posts from './Posts'
+import AddPost  from './AddPost';
 
 class User extends Component {
     render() {
@@ -14,8 +15,8 @@ class User extends Component {
                                 <p>a profile picture coming soon!</p>
                             </div>
                         </div>
-
                     </Col>
+
                     <Col s={6} className='profile-text'>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.
@@ -23,13 +24,18 @@ class User extends Component {
                             incididunt ut labore et dolore magna aliqua.
                              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi u</p>
                     </Col>
-                    <Col s={6}>
-                    </Col> 
-
                 </Row>
+                <Row>
+                    <Col s={6}>
+                        <AddPost />
+                    </Col>
+                </Row>
+
+                <Row className="Post-Feed">
+                    <Col s={6} className="Post-Feed-Item">
                         <Posts/>
-
-
+                    </Col> 
+                </Row>
             </div>
         )
     }

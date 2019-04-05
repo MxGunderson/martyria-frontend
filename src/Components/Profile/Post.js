@@ -22,7 +22,7 @@ class Post extends Component {
           const { dispatch } = value;
           return(
 
-            <div className="card card-body mb-3">
+        <div className="card card-body mb-3">
 
         <h5>{title}{ '' } - Read More <i onClick={() => this.setState({onShowPost: !this.state.onShowPost})} 
           className="fas fa-sort-down" style={{ cursor: 'pointer'}}/>
