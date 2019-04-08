@@ -10,11 +10,11 @@ function Header() {
         <div className="header">
           <Navbar brand='Martyria' right>
               <NavItem href='/'><Icon>search</Icon></NavItem>
-              <NavItem href='/Home'>Home</NavItem>
-              <NavItem href='/About'>About</NavItem>
-              <NavItem href='/Contact'>Contact</NavItem>
-              <NavItem href='/Login'>Login</NavItem>
-              <NavItem href='/Signup'>Signup</NavItem>
+              <NavItem href='/home'>Home</NavItem>
+              <NavItem href='/about'>About</NavItem>
+              <NavItem href='/contact'>Contact</NavItem>
+              <NavItem href='/login'>Login</NavItem>
+              <NavItem href='/signup'>Signup</NavItem>
               <NavItem href='/'><Icon>refresh</Icon></NavItem>
           </Navbar>
         </div>  
