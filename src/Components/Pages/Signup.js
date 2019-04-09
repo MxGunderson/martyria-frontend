@@ -10,16 +10,16 @@ import { signupUser } from '../../actions/authActions'
 class Signup extends Component {
   constructor() {
     super();
- this.state = {
-    name: '',
-    email: '',
-    password: '',
-    errors: {}
-  };
-  this.onChange = this.onChange.bind(this);
-  this.onSubmit = this.onSubmit.bind(this);
-}
-
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+      errors: {}
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  
   componentWillReceiveProps(nextProps) {  
     if(nextProps.errors){
       this.setState({errors: nextProps.errors});
@@ -30,7 +30,7 @@ class Signup extends Component {
       [e.target.name]: e.target.value
     });
   }
-
+  
   onSubmit = (e) => {
     e.preventDefault();
     
@@ -39,15 +39,15 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password
     };
-        // this.props.signupUser(newUser, this.props.history());
-         this.props.signupUser(newUser);
-        this.setState({ fireRedirect: true })
-      
+    // this.props.signupUser(newUser, this.props.history());
+    this.props.signupUser(newUser);
+    this.setState({ fireRedirect: true })
+    
   }
-
-   validateForm() {
-     return this.state.email.length > 0 && this.state.password.length > 0 && this.state.name.length > 0;
-   }
+  
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0 && this.state.name.length > 0;
+  }
   
   render() {
     const { errors } = this.state;
