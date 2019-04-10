@@ -6,6 +6,7 @@ import store from './store';
 import 'react-materialize';
 import './App.css';
 import Header from './Components/Layout/Header';
+import Footer from './Components/Layout/Footer';
 import Home from './Components/Pages/Home';
 import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
@@ -20,7 +21,7 @@ class App extends Component {
       <Provider store={ store }>
       <Router>
         <div className="App">
-          <Header />
+          <Header className="header"/>
           <div className="container">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -31,6 +32,7 @@ class App extends Component {
               <Route path='/signup' component={Signup} />
               <Route path='/user' component={User} />
             </Switch>
+          <Footer className="footer" />
           </div>
         </div>
       </Router>
