@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router';
 import 'react-materialize'
-
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import classnames from 'classnames';
+import { signupUser } from '../../actions/authActions';
+ 
 class Login extends Component {
    constructor() {
      super();
@@ -13,7 +17,15 @@ class Login extends Component {
      this.onChange = this.onChange.bind(this);
      this.onSubmit = this.onSubmit.bind(this);
    }
-
+   
+   componentWillReceiveProps(nextProps) {
+    if(nextProps.auth.isAuthenticated) {
+      this.propst.history.push('/user')
+    } 
+    if(nextProps.errors) {
+       this.setState({errors: nextProps.errors});
+     }
+   } 
 
   //changes the state
   onChange(e) {
@@ -25,11 +37,12 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const user = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
     this.setState({ fireRedirect: true })
+    this.props.signupUser(userData);
 
     console.log(this.state);
   }
@@ -38,9 +51,11 @@ class Login extends Component {
     return this.state.email && this.state.password;
   }
 
+
   render() {
     const { from } = this.props.location.state || '/User'
     const { fireRedirect } = this.state
+    const { errors } = this.state;
     return (
       <div className='container'>
         <form onSubmit={this.onSubmit} className='white'>
@@ -49,19 +64,23 @@ class Login extends Component {
             <label htmlFor="email">Email</label>
             <input 
               type="email" 
+              className={classnames('form-control from-control-lg', {'is-invalid': errors.email})}
               id="email" 
               onChange={this.onChange}
               value={this.state.email}
               />
+              {errors.name && (<div className="invalid-feedback">{errors.email}</div>)}
           </div>
           <div className="input-field">
             <label htmlFor="password">Password</label>
             <input 
-              type="password" 
+              type="password"
+              className={classnames('form-control from-control-lg', {'is-invalid': errors.password})} 
               id="password" 
               onChange={this.onChange}
               value={this.state.password}
               />
+              {errors.name && (<div className="invalid-feedback">{errors.password}</div>)}
           </div>
           <div className='input-field'>
 
@@ -75,6 +94,17 @@ class Login extends Component {
       </div>
     )
   }
+}   
+
+Login.propTypes = {
+  signupUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
 }
 
-export default Login
+const matStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(matStateToProps, {signupUser})(Login);
