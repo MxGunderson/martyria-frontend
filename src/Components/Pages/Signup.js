@@ -5,6 +5,7 @@ import { Redirect } from 'react-router';
 import 'react-materialize';
 import { connect } from 'react-redux';
 import { signupUser } from '../../actions/authActions'
+// import classnames from 'classnames';
 
 
 class Signup extends Component {
@@ -39,9 +40,9 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    // this.props.signupUser(newUser, this.props.history());
-    this.props.signupUser(newUser);
+    this.props.signupUser(newUser, this.props.history);
     this.setState({ fireRedirect: true })
+    console.log(this.state)
     
   }
   
@@ -62,9 +63,11 @@ class Signup extends Component {
                 <label htmlFor="name">Name</label>
                   <input 
                    type="text" 
+                  //  className={classnames('form-control from-control-lg', {'is-invalid': errors.name})}
                    name="name" 
                    onChange={this.onChange}
                    value= {this.state.name}
+                   error={errors.name}
                   />
             </div>
             <div className="input-field">
@@ -74,6 +77,7 @@ class Signup extends Component {
                   name="email" 
                   onChange={this.onChange}
                   value= {this.state.email}
+                  error={errors.email}
                 />
             </div>
             <div className="input-field">
@@ -83,6 +87,7 @@ class Signup extends Component {
                   name="password" 
                   onChange={this.onChange}
                   value= {this.state.password}
+                  error={errors.password}
                   />
             </div>
             <div className="input-field">
