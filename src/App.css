@@ -1,6 +1,7 @@
 body {
-  
-font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
 Container {
@@ -59,13 +60,9 @@ img {
   color: #bbb !important;
 }
 
-.footer {
-  bottom: 0;
-
-  
+Link {
+  position: fixed;
 }
-
-
 
 form {
   margin-left: 5em;
