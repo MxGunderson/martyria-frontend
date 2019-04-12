@@ -1,39 +1,38 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router';
-import 'react-materialize'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
-import { signupUser } from '../../actions/authActions';
- 
-class Login extends Component {
-   constructor() {
-     super();
-     this.state = {
-       email: '',
-       password: '',
-       errors: {}
-     };
-     this.onChange = this.onChange.bind(this);
-     this.onSubmit = this.onSubmit.bind(this);
-   }
-   
-   componentWillReceiveProps(nextProps) {
-    if(nextProps.auth.isAuthenticated) {
-      this.propst.history.push('/user')
-    } 
-    if(nextProps.errors) {
-       this.setState({errors: nextProps.errors});
-     }
-   } 
+import { loginUser } from '../../actions/authActions';
+import TextFieldGroup from '../Common/TextFieldGroup';
 
-  //changes the state
-  onChange(e) {
-    this.setState({[e.target.id]: e.target.value});
+class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      errors: {}
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  //console logging to check if submit works
-  //until we can get an api up and working
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
@@ -41,70 +40,60 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    this.setState({ fireRedirect: true })
-    this.props.signupUser(userData);
 
-    console.log(this.state);
+    this.props.loginUser(userData);
   }
 
-  validateForm() {
-    return this.state.email && this.state.password;
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
-
 
   render() {
-    const { from } = this.props.location.state || '/User'
-    const { fireRedirect } = this.state
     const { errors } = this.state;
+
     return (
-      <div className='container'>
-        <form onSubmit={this.onSubmit} className='white'>
-          <h4>Welcome back!</h4>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input 
-              type="email" 
-              className={classnames('form-control from-control-lg', {'is-invalid': errors.email})}
-              id="email" 
-              onChange={this.onChange}
-              value={this.state.email}
-              />
-              {errors.name && (<div className="invalid-feedback">{errors.email}</div>)}
-          </div>
-          <div className="input-field">
-            <label htmlFor="password">Password</label>
-            <input 
-              type="password"
-              className={classnames('form-control from-control-lg', {'is-invalid': errors.password})} 
-              id="password" 
-              onChange={this.onChange}
-              value={this.state.password}
-              />
-              {errors.name && (<div className="invalid-feedback">{errors.password}</div>)}
-          </div>
-          <div className='input-field'>
+      <div className="login">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <form onSubmit={this.onSubmit}>
+              <h1 className="display-4 text-center">Log In</h1>
+                <TextFieldGroup
+                  placeholder="Email Address"
+                  name="email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}
+                />
 
-            {/* this make the 'Login' btn greyed out until all require info is entered */}
-            <button className='btn blu lighten-1 z-depth-o' disabled={!this.validateForm()}>Login</button>
-            {fireRedirect && (
-              <Redirect to={from || '/User'} />
-            )}
+                <TextFieldGroup
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
+                />
+                <input type="submit" className="btn btn-info btn-block mt-4" />
+              </form>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
-    )
+    );
   }
-}   
-
-Login.propTypes = {
-  signupUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
 }
 
-const matStateToProps = (state) => ({
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
-export default connect(matStateToProps, {signupUser})(Login);
+export default connect(mapStateToProps, { loginUser })(Login);

@@ -4,7 +4,9 @@ import { Provider } from 'react-redux';
 import store from './store';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
-import { setCurrentUser } from './actions/authActions';
+import { setCurrentUser  } from './actions/authActions';
+import { logoutUser  } from './actions/authActions';
+import { clearCurrentProfile  } from './actions/profileActions';
 
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
@@ -14,8 +16,10 @@ import Contact from './Components/Pages/Contact';
 import Login from './Components/Pages/Login';
 import Signup from './Components/Pages/Signup';
 import User from './Components/Profile/User';
+import Dashboard from './Components/dashboard/Dashboard'; 
 import 'react-materialize';
 import './App.css';
+
 
 // Check for token
 if(localStorage.jwt_decode) {
@@ -25,6 +29,8 @@ if(localStorage.jwt_decode) {
   const decoded = jwt_decode(localStorage.jwtToken);
   // set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
+   store.dispatch(logoutUser(decoded));
+    store.dispatch(clearCurrentProfile(decoded));
 }
 
 class App extends Component {
@@ -40,9 +46,10 @@ class App extends Component {
               <Route path='/about' component={About} /> 
               <Route path='/home' component={Home} />
               <Route path='/contact' component={Contact} />
-              <Route path='/login' component={Login} />
-              <Route path='/signup' component={Signup} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/signup' component={Signup} />
               <Route path='/user' component={User} />
+              <Route exact path='/dashboard' component={Dashboard} />
             </Switch>
           <Footer className="footer" />
           </div>
