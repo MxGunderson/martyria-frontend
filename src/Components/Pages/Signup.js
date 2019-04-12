@@ -20,10 +20,16 @@ class Signup extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  
-  componentWillReceiveProps(nextProps) {  
-    if(nextProps.errors){
-      this.setState({errors: nextProps.errors});
+
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated) {
+      this.props.history.push('./user')
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
     }
   }
   onChange(e) {
@@ -31,10 +37,10 @@ class Signup extends Component {
       [e.target.name]: e.target.value
     });
   }
-  
+
   onSubmit = (e) => {
     e.preventDefault();
-    
+
     const newUser = {
       name: this.state.name,
       email: this.state.email,
@@ -43,13 +49,13 @@ class Signup extends Component {
     this.props.signupUser(newUser, this.props.history);
     this.setState({ fireRedirect: true })
     console.log(this.state)
-    
+
   }
-  
+
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0 && this.state.name.length > 0;
   }
-  
+
   render() {
     const { errors } = this.state;
     const { from } = this.props.location.state || '/Login'
@@ -59,42 +65,42 @@ class Signup extends Component {
         <div className="container">
           <form onSubmit={this.onSubmit} className="white">
             <h5 className="grey-text-darken-3">Signup!</h5>
-              <div className="input-field">
-                <label htmlFor="name">Name</label>
-                  <input 
-                   type="text" 
-                  //  className={classnames('form-control from-control-lg', {'is-invalid': errors.name})}
-                   name="name" 
-                   onChange={this.onChange}
-                   value= {this.state.name}
-                   error={errors.name}
-                  />
+            <div className="input-field">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                //  className={classnames('form-control from-control-lg', {'is-invalid': errors.name})}
+                name="name"
+                onChange={this.onChange}
+                value={this.state.name}
+                error={errors.name}
+              />
             </div>
             <div className="input-field">
               <label htmlFor="email">Email</label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  onChange={this.onChange}
-                  value= {this.state.email}
-                  error={errors.email}
-                />
+              <input
+                type="email"
+                name="email"
+                onChange={this.onChange}
+                value={this.state.email}
+                error={errors.email}
+              />
             </div>
             <div className="input-field">
               <label htmlFor="password">Password</label>
-                <input 
-                  type="password" 
-                  name="password" 
-                  onChange={this.onChange}
-                  value= {this.state.password}
-                  error={errors.password}
-                  />
+              <input
+                type="password"
+                name="password"
+                onChange={this.onChange}
+                value={this.state.password}
+                error={errors.password}
+              />
             </div>
             <div className="input-field">
               <button className="btn blu lighten-1 z-depth-0 " disabled={!this.validateForm()}>Signup! </button>
               {fireRedirect && (
-          <Redirect to={from || '/Login'}/>
-        )}
+                <Redirect to={from || '/Login'} />
+              )}
             </div>
           </form>
         </div>
@@ -114,4 +120,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors
 })
 
-export default connect(mapStateToProps, {signupUser}) (withRouter(Signup));
+export default connect(mapStateToProps, { signupUser })(withRouter(Signup));
