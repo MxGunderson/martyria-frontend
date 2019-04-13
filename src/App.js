@@ -5,7 +5,6 @@ import store from './store';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
-
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import Home from './Components/Pages/Home';
@@ -14,8 +13,10 @@ import Contact from './Components/Pages/Contact';
 import Login from './Components/Pages/Login';
 import Signup from './Components/Pages/Signup';
 import User from './Components/Profile/User';
+import Dashboard from './Components/Dashboard/Dashboard';
 import 'react-materialize';
 import './App.css';
+import { clearCurrentProfile } from './actions/profileActions';
 
 // Check for token
 if (localStorage.jwt_decode) {
@@ -32,7 +33,7 @@ if (localStorage.jwt_decode) {
     //logout user
     store.dispatch(logoutUser)
     //TODO: Clear current profile
-
+    store.dispatch(clearCurrentProfile());
     //Redirect to login
     window.location.href = '/login';
   }
@@ -54,6 +55,7 @@ class App extends Component {
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={Signup} />
                 <Route path='/user' component={User} />
+                 <Route path='/dashboard' component={Dashboard} />
               </Switch>
               <Footer className="footer" />
             </div>
