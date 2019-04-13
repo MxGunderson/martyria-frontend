@@ -69,7 +69,6 @@ class Signup extends Component {
               <label htmlFor="name">Name</label>
               <input
                 type="text"
-                //  className={classnames('form-control from-control-lg', {'is-invalid': errors.name})}
                 name="name"
                 onChange={this.onChange}
                 value={this.state.name}
