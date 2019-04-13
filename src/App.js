@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './store';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
+import { clearCurrentProfile } from './actions/profileActions';
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+import PrivateRoute from './Components/common/PrivateRoute';
+
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import Home from './Components/Pages/Home';
@@ -14,9 +19,12 @@ import Login from './Components/Pages/Login';
 import Signup from './Components/Pages/Signup';
 import User from './Components/Profile/User';
 import Dashboard from './Components/Dashboard/Dashboard';
-import 'react-materialize';
+import CreateProfile from './Components/create-profile/CreateProfile';
+
+// import 'react-materialize';
+
 import './App.css';
-import { clearCurrentProfile } from './actions/profileActions';
+
 
 // Check for token
 if (localStorage.jwt_decode) {
@@ -39,6 +47,10 @@ if (localStorage.jwt_decode) {
   }
 }
 
+//in order to preview both profile and create profile 
+//remove the 'private' in 'privateRoute' 
+//then type in the http /dashboard after localHost:3000/
+
 class App extends Component {
   render() {
     return (
@@ -47,15 +59,18 @@ class App extends Component {
           <div className="App">
             <Header className="header" />
             <div className="container">
+              <Route exact path="/" component={Home} />
+              <Route path='/about' component={About} />
+              <Route path='/home' component={Home} />
+              <Route path='/contact' component={Contact} />
+              <Route path='/login' component={Login} />
+              <Route path='/signup' component={Signup} />
+              <Route path='/user' component={User} />
               <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path='/about' component={About} />
-                <Route path='/home' component={Home} />
-                <Route path='/contact' component={Contact} />
-                <Route path='/login' component={Login} />
-                <Route path='/signup' component={Signup} />
-                <Route path='/user' component={User} />
-                 <Route path='/dashboard' component={Dashboard} />
+                <PrivateRoute path='/dashboard' component={Dashboard} />
+              </Switch>
+              <Switch>
+                <PrivateRoute path='/create-profile' component={CreateProfile} />
               </Switch>
               <Footer className="footer" />
             </div>
