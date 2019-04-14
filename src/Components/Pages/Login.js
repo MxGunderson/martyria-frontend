@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 import { signupUser } from '../../actions/authActions';
 import TextFieldGroup from '../common/TextFieldGroup';
 
@@ -42,6 +43,7 @@ class Login extends Component {
     };
 
     this.props.signupUser(userData);
+     this.setState({ fireRedirect: true })
   }
 
   onChange(e) {
@@ -50,6 +52,8 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+      const { from } = this.props.location.state || '/dashboard'
+    const { fireRedirect } = this.state
 
     return (
       <div className="login">
@@ -76,6 +80,9 @@ class Login extends Component {
                   error={errors.password}
                 />
                 <input type="submit" className="btn btn-info btn-block mt-4" />
+                {fireRedirect && (
+                <Redirect to={from || '/dashboard'} />
+              )}
               </form>
             </div>
           </div>
