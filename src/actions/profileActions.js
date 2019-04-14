@@ -28,6 +28,19 @@ export const getCurrentProfile = () => dispatch => {
     );
 };
 
+//Create info FOR the Profile
+export const createInfo= (profileData, history) => dispatch => {
+  axios
+    .post('/api/profile', profileData)
+    .then(res => history.push('/dashboard'))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 // Get profile by handle
 export const getProfileByHandle = handle => dispatch => {
   dispatch(setProfileLoading());

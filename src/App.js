@@ -67,10 +67,11 @@ class App extends Component {
               <Route path='/signup' component={Signup} />
               <Route path='/user' component={User} />
               <Switch>
-                <PrivateRoute path='/dashboard' component={Dashboard} />
+                <Route path='/dashboard' component={Dashboard} />
               </Switch>
               <Switch>
-                <PrivateRoute path='/create-profile' component={CreateProfile} />
+              {/* Private */}
+                <Route path='/create-profile' component={CreateProfile} />
               </Switch>
               <Footer className="footer" />
             </div>
