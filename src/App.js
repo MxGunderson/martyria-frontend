@@ -4,12 +4,9 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
-
 import { Provider } from 'react-redux';
 import store from './store';
-
 import PrivateRoute from './Components/common/PrivateRoute';
-
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import Home from './Components/Pages/Home';
@@ -20,6 +17,8 @@ import Signup from './Components/Pages/Signup';
 import User from './Components/Profile/User';
 import Dashboard from './Components/Dashboard/Dashboard';
 import CreateProfile from './Components/create-profile/CreateProfile';
+import Posts from './Components/posts/Posts';
+import Post from './Components/post/Post';
 
 // import 'react-materialize';
 
@@ -71,7 +70,14 @@ class App extends Component {
               </Switch>
               <Switch>
               {/* Private */}
-                <Route path='/create-profile' component={CreateProfile} />
+                <PrivateRoute path='/create-profile' component={CreateProfile} />
+              </Switch>
+               <Switch>
+              {/* Private */}
+                <PrivateRoute path='/feed' component={Posts} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch>
               <Footer className="footer" />
             </div>

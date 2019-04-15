@@ -25,6 +25,7 @@ class Header extends Component {
           <NavItem href='#' onClick={this.onLogoutClick.bind(this)} className='nav-link'>Logout</NavItem>
           <img src={user.avatar} alt={user.name} title='upload an image!' />
           <NavItem href='/'><Icon>search</Icon></NavItem>
+          <NavItem href='/feed'>Post Feed</NavItem>
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/contact'>Contact</NavItem>
           <NavItem href='/'><Icon>refresh</Icon></NavItem>
