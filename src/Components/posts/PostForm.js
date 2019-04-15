@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
+import TextInputGroup from '../Layout/TextInputGroup';
 import { addPost } from '../../actions/postActions';
 
 class PostForm extends Component {
@@ -9,6 +10,7 @@ class PostForm extends Component {
     super(props);
     this.state = {
       text: '',
+      title: '',
       errors: {}
     };
 
@@ -29,6 +31,7 @@ class PostForm extends Component {
 
     const newPost = {
       text: this.state.text,
+      title: this.state.title,
       name: user.name,
       avatar: user.avatar
     };
@@ -43,7 +46,7 @@ class PostForm extends Component {
 
   render() {
     const { errors } = this.state;
-
+    
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
@@ -51,6 +54,14 @@ class PostForm extends Component {
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
+                <TextInputGroup
+                  placeholder="Title"
+                  type="title"
+                  name="title"
+                  value={this.state.title}
+                  onChange={this.onChange}
+                  error={errors.text}
+                />
                 <TextAreaFieldGroup
                   placeholder="Create a post"
                   name="text"

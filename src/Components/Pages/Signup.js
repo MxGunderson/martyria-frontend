@@ -59,6 +59,8 @@ class Signup extends Component {
 
   render() {
     const { errors } = this.state;
+
+    //From and Redirect is getting us from login to dashboard and should be deleted when we start connecting backend!!!!!!
     const { from } = this.props.location.state || '/Login'
     const { fireRedirect } = this.state
     return (

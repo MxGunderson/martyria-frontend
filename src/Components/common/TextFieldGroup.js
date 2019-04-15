@@ -6,10 +6,12 @@ const TextFieldGroup = ({
   name,
   placeholder,
   value,
+  value2,
   label,
   error,
   info,
   type,
+  title,
   onChange,
   disabled
 }) => {
@@ -22,7 +24,9 @@ const TextFieldGroup = ({
         })}
         placeholder={placeholder}
         name={name}
+        title={title}
         value={value}
+        value2={value2}
         onChange={onChange}
         disabled={disabled}
       />
@@ -34,8 +38,10 @@ const TextFieldGroup = ({
 
 TextFieldGroup.propTypes = {
   name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
+  value2: PropTypes.string.isRequired,
   info: PropTypes.string,
   error: PropTypes.string,
   type: PropTypes.string.isRequired,

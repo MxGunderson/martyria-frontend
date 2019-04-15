@@ -43,6 +43,7 @@ class Login extends Component {
     };
 
     this.props.signupUser(userData);
+      //This Redirect is getting us from login to dashboard and should be deleted when we start connecting backend!!!!!!
      this.setState({ fireRedirect: true })
   }
 
@@ -52,7 +53,9 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
-      const { from } = this.props.location.state || '/dashboard'
+    //From and Redirect is getting us from login to dashboard and should be deleted when we start connecting backend!!!!!!
+
+    const { from } = this.props.location.state || '/dashboard'
     const { fireRedirect } = this.state
 
     return (

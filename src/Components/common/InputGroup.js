@@ -8,6 +8,7 @@ const InputGroup = ({
     value,
     error,
     icon,
+    title,
     type,
     onChange
 }) => {
@@ -25,6 +26,7 @@ const InputGroup = ({
                 placeholder={placeholder}
                 name={name}
                 value={value}
+                title={title}
                 onChange={onChange}
             />
             {error && <div className="invalid-feedback">{error}</div>}
@@ -35,6 +37,7 @@ const InputGroup = ({
 InputGroup.propTypes = {
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
+    title: PropTypes.string,
     value: PropTypes.string.isRequired,
     icon: PropTypes.string,
     error: PropTypes.string,

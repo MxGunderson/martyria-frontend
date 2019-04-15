@@ -20,6 +20,7 @@ import CreateProfile from './Components/create-profile/CreateProfile';
 import Posts from './Components/posts/Posts';
 import Post from './Components/post/Post';
 
+
 // import 'react-materialize';
 
 import './App.css';
@@ -70,14 +71,14 @@ class App extends Component {
               </Switch>
               <Switch>
               {/* Private */}
-                <PrivateRoute path='/create-profile' component={CreateProfile} />
+                <Route path='/create-profile' component={CreateProfile} />
               </Switch>
                <Switch>
               {/* Private */}
-                <PrivateRoute path='/feed' component={Posts} />
+                <Route path='/feed' component={Posts} />
               </Switch>
               <Switch>
-                <PrivateRoute exact path="/post/:id" component={Post} />
+                <Route exact path="/post/:id" component={Post} />
               </Switch>
               <Footer className="footer" />
             </div>
