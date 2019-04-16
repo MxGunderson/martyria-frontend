@@ -6,7 +6,6 @@ import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import Spinner from '../common/Spinner';
 import ProfileActions from './ProfileActions';
 
-
 class Dashboard extends Component {
   componentDidMount() {
     this.props.getCurrentProfile();
@@ -32,7 +31,7 @@ onDeleteClick(e) {
             <p className='lead text-muted'>
             Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
-            <ProfileActions />
+            
             <div style={{marginBottom: '60px'}} />
             <button onClick={this.onDeleteClickbind(this)} className='btn btn-danger'>Delete my account</button>
           </div>
@@ -44,6 +43,8 @@ onDeleteClick(e) {
             <p className='lead text-muted'>Welcome <Link to={`/profile/${profile.handle}`}> {user.name} </Link></p>
             <p>You have not yet setup a profile, please add some info</p>
             <Link to='/create-profile' className='btn btn-lg btn-info'>Create Profile</Link>
+            
+            <ProfileActions />
           </div>
         );
       }
