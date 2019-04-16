@@ -14,9 +14,11 @@ import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
 import Login from './Components/Pages/Login';
 import Signup from './Components/Pages/Signup';
-import User from './Components/Profile/User';
+// import User from './Components/Profile/User';
 import Dashboard from './Components/Dashboard/Dashboard';
 import CreateProfile from './Components/create-profile/CreateProfile';
+import Profile from './Components/Profile/Profile';
+import Profiles from './Components/profiles/Profiles';
 import Posts from './Components/posts/Posts';
 import Post from './Components/post/Post';
 
@@ -65,7 +67,11 @@ class App extends Component {
               <Route path='/contact' component={Contact} />
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
-              <Route path='/user' component={User} />
+              {/* <Route path='/user' component={User} /> */}
+              <Route path='/profiles' component={Profiles} />
+              <Route path='/profile' component={Profile} />
+            
+
               <Switch>
                 <Route path='/dashboard' component={Dashboard} />
               </Switch>
