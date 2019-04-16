@@ -21,11 +21,12 @@ import Profile from './Components/Profile/Profile';
 import Profiles from './Components/profiles/Profiles';
 import Posts from './Components/posts/Posts';
 import Post from './Components/post/Post';
-
+import EditProfile from './Components/edit-profile/EditProfile';
 
 // import 'react-materialize';
 
 import './App.css';
+
 
 
 // Check for token
@@ -67,25 +68,32 @@ class App extends Component {
               <Route path='/contact' component={Contact} />
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
-              {/* <Route path='/user' component={User} /> */}
-              <Route path='/profiles' component={Profiles} />
               <Route path='/profile' component={Profile} />
-            
+              <Route path='/profiles' component={Profiles} />
+              {/* <Route path='/user' component={User} /> */}
 
               <Switch>
                 <Route path='/dashboard' component={Dashboard} />
               </Switch>
-              <Switch>
               {/* Private */}
+              <Switch>
+                {/* Private */}
                 <Route path='/create-profile' component={CreateProfile} />
               </Switch>
-               <Switch>
               {/* Private */}
+              <Switch>
+                <Route exact path="/edit-profile" component={EditProfile} />
+              </Switch>
+
+              <Switch>
+                {/* Private */}
                 <Route path='/feed' component={Posts} />
               </Switch>
+              {/* Private */}
               <Switch>
                 <Route exact path="/post/:id" component={Post} />
               </Switch>
+
               <Footer className="footer" />
             </div>
           </div>
