@@ -18,7 +18,6 @@ import Signup from './Components/Pages/Signup';
 import Dashboard from './Components/Dashboard/Dashboard';
 import CreateProfile from './Components/create-profile/CreateProfile';
 import Profile from './Components/Profile/Profile';
-import Profiles from './Components/profiles/Profiles';
 import Posts from './Components/posts/Posts';
 import Post from './Components/post/Post';
 import EditProfile from './Components/edit-profile/EditProfile';
@@ -69,7 +68,6 @@ class App extends Component {
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
               <Route path='/profile' component={Profile} />
-              <Route path='/profiles' component={Profiles} />
               {/* <Route path='/user' component={User} /> */}
 
               <Switch>
