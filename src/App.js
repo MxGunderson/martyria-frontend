@@ -6,7 +6,7 @@ import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 import { Provider } from 'react-redux';
 import store from './store';
-import PrivateRoute from './Components/common/PrivateRoute';
+// import PrivateRoute from './Components/common/PrivateRoute';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import Home from './Components/Pages/Home';

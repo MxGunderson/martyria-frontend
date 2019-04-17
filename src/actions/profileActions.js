@@ -13,7 +13,7 @@ import {
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get('/api/profile')
+    .get('https://floating-fjord-69030.herokuapp.com/api/users')
     .then(res =>
       dispatch({
         type: GET_PROFILE,

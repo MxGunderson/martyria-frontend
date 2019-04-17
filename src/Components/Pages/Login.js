@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import { signupUser } from '../../actions/authActions';
+import { loginUser } from '../../actions/authActions';
 import TextFieldGroup from '../common/TextFieldGroup';
 
 class Login extends Component {
@@ -42,7 +42,7 @@ class Login extends Component {
       password: this.state.password
     };
 
-    this.props.signupUser(userData);
+    this.props.loginUser(userData);
       //This Redirect is getting us from login to dashboard and should be deleted when we start connecting backend!!!!!!
      this.setState({ fireRedirect: true })
   }
@@ -96,7 +96,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  signupUser: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -106,4 +106,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { signupUser })(Login);
+export default connect(mapStateToProps, { loginUser })(Login);
