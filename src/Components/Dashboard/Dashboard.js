@@ -11,9 +11,9 @@ class Dashboard extends Component {
     this.props.getCurrentProfile();
   }
 
-onDeleteClick(e) {
-  this.props.deleteAccount();
-}
+  onDeleteClick(e) {
+    this.props.deleteAccount();
+  }
 
   render() {
 
@@ -29,21 +29,21 @@ onDeleteClick(e) {
         dashboardContent = (
           <div>
             <p className='lead text-muted'>
-            Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
-            
-            <div style={{marginBottom: '60px'}} />
+
+            <div style={{ marginBottom: '60px' }} />
             <button onClick={this.onDeleteClickbind(this)} className='btn btn-danger'>Delete my account</button>
+            {/* profileActions is supposed to go here */}
           </div>
         )
       } else {
         //User is logged in but has no profile
         dashboardContent = (
           <div>
+            <Link to='/create-profile' className='btn btn-lg btn-info'>Create Profile</Link>
             <p className='lead text-muted'>Welcome <Link to={`/profile/${profile.handle}`}> {user.name} </Link></p>
             <p>You have not yet setup a profile, please add some info</p>
-            <Link to='/create-profile' className='btn btn-lg btn-info'>Create Profile</Link>
-            
             <ProfileActions />
           </div>
         );
