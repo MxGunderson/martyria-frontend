@@ -1,14 +1,12 @@
-body {
+body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
-Container {
-  margin: 0;
-  padding: 0;
-  border-block-end-width: 0ch
-}
+
+
+
 
 .container {
   width: 100%;
@@ -72,3 +70,6 @@ form {
 
 }
 
+Footer{
+  position: relative;
+}

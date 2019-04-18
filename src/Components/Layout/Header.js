@@ -22,11 +22,18 @@ class Header extends Component {
     const authLinks = (
       <div className="container">
         <div className="header">
-          <NavItem href='#' onClick={this.onLogoutClick.bind(this)} className='nav-link'>Logout</NavItem>
-          <img src={user.avatar} alt={user.name} title='upload an image!' />
+          <NavItem classname="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
+          <img
+              className="rounded-circle"
+              src={user.avatar}
+              alt={user.name}
+              style={{ width: '25px', marginRight: '5px' }}
+              title="You must have a Gravatar connected to your email to display an image"
+            />
           <NavItem href='/'><Icon>search</Icon></NavItem>
           <NavItem href='/feed'>Post Feed</NavItem>
-          <NavItem href='/about'>About</NavItem>
+          {/* <NavItem href='/home'>Home</NavItem>
+          <NavItem href='/about'>About</NavItem> */}
           <NavItem href='/contact'>Contact</NavItem>
           <NavItem href='/'><Icon>refresh</Icon></NavItem>
           
@@ -40,6 +47,7 @@ class Header extends Component {
           <NavItem href='/'><Icon>search</Icon></NavItem>
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/contact'>Contact</NavItem>
+          <NavItem href='/home'>Home</NavItem>
           <NavItem href='/login'>Login</NavItem>
           <NavItem href='/signup'>Signup</NavItem>
           <NavItem href='/feed'><Icon>refresh</Icon></NavItem>

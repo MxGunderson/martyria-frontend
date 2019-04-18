@@ -7,6 +7,7 @@ import { clearCurrentProfile } from './actions/profileActions';
 import { Provider } from 'react-redux';
 import store from './store';
 import PrivateRoute from'./Components/common/PrivateRoute';
+import Landing from './Components/Pages/Landing';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import Home from './Components/Pages/Home';
@@ -60,9 +61,10 @@ class App extends Component {
           <div className="App">
             <Header className="header" />
             <div className="container">
-              <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Landing} />
               <Route path='/about' component={About} />
-              <Route path='/home' component={Home} />
+              {/* <Route path='/home' component={Home} /> */}
               <Route path='/contact' component={Contact} />
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
@@ -88,10 +90,10 @@ class App extends Component {
               </Switch>
               {/* Private */}
               <Switch>
-                <Route exact path="/post/:id" component={Post} />
+                <Route exact path="/post" component={Post} />
               </Switch>
 
-              <Footer className="footer" />
+              <Footer className="landing" />
             </div>
           </div>
         </Router>

@@ -14,15 +14,17 @@ class Home extends Component {
                 <h3 className="display-3 mb-4">Welcome To Martyria</h3>
                 <p className="lead">
                   {' '}
-                  Create a profile, share testimonies and connect with other Believers!
+                  We are glad you are here!
+                </p>
+                <p className="lead">
+                  {' '}
+                  Join us in spreading the good news of Christ!
+                </p>
+                <p className="lead">
+                  {' '}
+                  Share a testimony and encourage others! Below are a few testimonies we wanted to share!
                 </p>
                 <hr />
-                <Link to="/signup" className="btn btn-lg btn-info mr-2">
-                  Sign Up
-                </Link>
-                <Link to="/login" className="btn btn-lg btn-light">
-                  Login
-                </Link>
               </div>
             </div>
           </div>

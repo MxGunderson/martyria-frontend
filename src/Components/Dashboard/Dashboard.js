@@ -20,8 +20,9 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     const { profile, loading } = this.props.profile;
 
+    console.log('USER', user);
     let dashboardContent;
-    if (profile === null || loading) {
+    if (profile === null || loading || !user) {
       dashboardContent = <Spinner />
     } else {
       //check if logged in user has profile data
