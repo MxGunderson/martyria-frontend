@@ -32,6 +32,7 @@ class Header extends Component {
             />
           <NavItem href='/'><Icon>search</Icon></NavItem>
           <NavItem href='/feed'>Post Feed</NavItem>
+          <NavItem href='/dashboard'>Back To Dashboard</NavItem>
           {/* <NavItem href='/home'>Home</NavItem>
           <NavItem href='/about'>About</NavItem> */}
           <NavItem href='/contact'>Contact</NavItem>
