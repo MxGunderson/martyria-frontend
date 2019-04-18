@@ -6,7 +6,7 @@ import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 import { Provider } from 'react-redux';
 import store from './store';
-// import PrivateRoute from './Components/common/PrivateRoute';
+import PrivateRoute from'./Components/common/PrivateRoute';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import Home from './Components/Pages/Home';
@@ -14,7 +14,6 @@ import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
 import Login from './Components/Pages/Login';
 import Signup from './Components/Pages/Signup';
-// import User from './Components/Profile/User';
 import Dashboard from './Components/Dashboard/Dashboard';
 import CreateProfile from './Components/create-profile/CreateProfile';
 import Profile from './Components/Profile/Profile';
@@ -68,24 +67,24 @@ class App extends Component {
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
               <Route path='/profile' component={Profile} />
-              {/* <Route path='/user' component={User} /> */}
+              
 
               <Switch>
-                <Route path='/dashboard' component={Dashboard} />
+                <PrivateRoute path='/dashboard' component={Dashboard} />
               </Switch>
               {/* Private */}
               <Switch>
                 {/* Private */}
-                <Route path='/create-profile' component={CreateProfile} />
+                <PrivateRoute path='/create-profile' component={CreateProfile} />
               </Switch>
               {/* Private */}
               <Switch>
-                <Route exact path="/edit-profile" component={EditProfile} />
+                <PrivateRoute exact path="/edit-profile" component={EditProfile} />
               </Switch>
 
               <Switch>
                 {/* Private */}
-                <Route path='/feed' component={Posts} />
+                <PrivateRoute path='/feed' component={Posts} />
               </Switch>
               {/* Private */}
               <Switch>

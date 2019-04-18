@@ -18,7 +18,7 @@ export const signupUser = (userData, history) => dispatch => {
 
 // LOGIN USER GET USER TOKEN
 
-export const loginUser = (userData) => dispatch => {
+export const loginUser = userData => dispatch => {
   axios.post('https://floating-fjord-69030.herokuapp.com/api/auth', userData)
   .then(res => {
     // SAVE TO LOCAL STORAGE
@@ -28,14 +28,16 @@ export const loginUser = (userData) => dispatch => {
     // SET TO AUTH HEADER
     setAuthToken(token);
     // DECODE TOKEN TO GET USER DATA
-    const decoded = jwt_decode(token);
+    const decoded = jwt_decode(res.data);
     // SET CURRENT USER
     dispatch(setCurrentUser(decoded));
   })
-  .catch(err => dispatch({
-    type: GET_ERRORS,
-    payload: err.response.data
-  }));
+  .catch(err => 
+    dispatch({
+      type: GET_ERRORS,
+      payload: err.res.data
+    })
+  );
 };
 
 // set logged in user

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Redirect } from 'react-router';
+// import { Redirect } from 'react-router';
 import TextFieldGroup from '../common/TextFieldGroup'
 import 'react-materialize';
 import { connect } from 'react-redux';
@@ -24,7 +24,7 @@ class Signup extends Component {
 
   componentDidMount() {
     if(this.props.auth.isAuthenticated) {
-      this.props.history.push('./dashboard')
+      this.props.history.push('/login')
     }
   }
 
@@ -48,21 +48,14 @@ class Signup extends Component {
       password: this.state.password
     };
     this.props.signupUser(newUser, this.props.history);
-    this.setState({ fireRedirect: true })
     console.log(this.state)
 
   }
 
-  // validateForm() {
-  //   return this.state.email.length > 0 && this.state.password.length > 0 && this.state.name.length > 0;
-  // }
-
   render() {
     const { errors } = this.state;
-
-    //From and Redirect is getting us from login to dashboard and should be deleted when we start connecting backend!!!!!!
-    const { from } = this.props.location.state || '/Login'
-    const { fireRedirect } = this.state
+    // const { from } = this.props.location.state || '/Login'
+    // const { fireRedirect } = this.state
     return (
       <div className="register">
         <div className="container">
@@ -95,9 +88,9 @@ class Signup extends Component {
                   error={errors.password}
                 />
                 <input type="submit" className="btn btn-info btn-block mt-4" />
-                  {fireRedirect && (
+                  {/* {fireRedirect && (
                 <Redirect to={from || '/Login'} />
-              )}
+              )} */}
               </form>
             </div>
           </div>

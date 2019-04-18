@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
 import { loginUser } from '../../actions/authActions';
 import TextFieldGroup from '../common/TextFieldGroup';
 
@@ -43,8 +42,6 @@ class Login extends Component {
     };
 
     this.props.loginUser(userData);
-      //This Redirect is getting us from login to dashboard and should be deleted when we start connecting backend!!!!!!
-     this.setState({ fireRedirect: true })
   }
 
   onChange(e) {
@@ -53,11 +50,7 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
-    //From and Redirect is getting us from login to dashboard and should be deleted when we start connecting backend!!!!!!
-
-    const { from } = this.props.location.state || '/dashboard'
-    const { fireRedirect } = this.state
-
+  
     return (
       <div className="login">
         <div className="container">
@@ -83,9 +76,6 @@ class Login extends Component {
                   error={errors.password}
                 />
                 <input type="submit" className="btn btn-info btn-block mt-4" />
-                {fireRedirect && (
-                <Redirect to={from || '/dashboard'} />
-              )}
               </form>
             </div>
           </div>
