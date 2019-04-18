@@ -22,13 +22,14 @@ export const loginUser = userData => dispatch => {
   axios.post('https://floating-fjord-69030.herokuapp.com/api/auth', userData)
   .then(res => {
     // SAVE TO LOCAL STORAGE
-    const { token } = res.data
+    //const { token } = res.data
+    const token = res.data; // = token
     // SET TOKEN TO LOCAL STORAGE
     localStorage.setItem('jwtToken', token);
     // SET TO AUTH HEADER
     setAuthToken(token);
     // DECODE TOKEN TO GET USER DATA
-    const decoded = jwt_decode(res.data);
+    const decoded = jwt_decode(token);
     // SET CURRENT USER
     dispatch(setCurrentUser(decoded));
   })

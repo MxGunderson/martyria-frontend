@@ -33,9 +33,9 @@ class Dashboard extends Component {
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
 
-            <div style={{ marginBottom: '60px' }} />
+            {/* <div style={{ marginBottom: '60px' }} />
             <button onClick={this.onDeleteClickbind(this)} className='btn btn-danger'>Delete my account</button>
-            {/* profileActions is supposed to go here */}
+            profileActions is supposed to go here */}
           </div>
         )
       } else {
