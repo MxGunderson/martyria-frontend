@@ -35,7 +35,7 @@ if (localStorage.jwt_decode) {
   //decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
   // set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded));
+  store.dispatch(setCurrentUser(decoded, localStorage.jwtToken));
 
   //check for expired token - which is set on the backend - check to see if that has been implemented
   const currentTime = Date.now() / 1000
@@ -49,9 +49,7 @@ if (localStorage.jwt_decode) {
   }
 }
 
-//in order to preview both profile and create profile 
-//remove the 'private' in 'privateRoute' 
-//then type in the http /dashboard after localHost:3000/
+
 
 class App extends Component {
   render() {
@@ -59,7 +57,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Header className="header" />
+            <Header className="header " />
             <div className="container">
               <Route exact path="/home" component={Home} />
               <Route exact path="/" component={Landing} />
@@ -86,7 +84,7 @@ class App extends Component {
 
               <Switch>
                 {/* Private */}
-                <PrivateRoute path='/feed' component={Posts} />
+                <Route path='/feed' component={Posts} />
               </Switch>
               {/* Private */}
               <Switch>

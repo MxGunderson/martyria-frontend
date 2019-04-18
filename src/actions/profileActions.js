@@ -10,10 +10,10 @@ import {
 } from './types';
 
 // Get current profile
-export const getCurrentProfile = () => dispatch => {
+export const getCurrentProfile = userData => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get('https://floating-fjord-69030.herokuapp.com/api/user')
+    .get('https://floating-fjord-69030.herokuapp.com/api/me', userData)
     .then(res =>
       dispatch({
         type: GET_PROFILE,
@@ -29,10 +29,10 @@ export const getCurrentProfile = () => dispatch => {
 };
 
 // Get profile by handle 
-export const getProfileByHandle = (handle) => dispatch => {
+export const getProfileByHandle = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get(`/api/profile/handle/${handle}`)
+    .get(`https://floating-fjord-69030.herokuapp.com/api/users/me`)
     .then(res =>
       dispatch({
         type: GET_PROFILE,

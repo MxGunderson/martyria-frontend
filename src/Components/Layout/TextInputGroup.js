@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 const TextInputGroup = ({
   label,
-  firstName,
-  lastName,
+  firstname,
+  lastname,
   name,
   value,
   placeholder,
@@ -19,8 +19,8 @@ const TextInputGroup = ({
             <label htmlFor={name}>{label}</label>
             <input 
             type={type}
-            firstName={firstName}
-            lastName={lastName}
+            firstname={firstname}
+            lastname={lastname}
             name={name}
             className={classnames('form-control form-control-lg', {
               'is-invalid':error

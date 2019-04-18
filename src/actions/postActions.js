@@ -14,7 +14,7 @@ import {
 export const addPost = postData => dispatch => {
   dispatch(clearErrors());
   axios
-    .post('/api/posts', postData)
+    .post('https://floating-fjord-69030.herokuapp.com/api/posts', postData)
     .then(res =>
       dispatch({
         type: ADD_POST,
@@ -33,7 +33,7 @@ export const addPost = postData => dispatch => {
 export const getPosts = () => dispatch => {
   dispatch(setPostLoading());
   axios
-    .get('/api/posts')
+    .get('https://floating-fjord-69030.herokuapp.com/api/posts')
     .then(res =>
       dispatch({
         type: GET_POSTS,
@@ -52,7 +52,7 @@ export const getPosts = () => dispatch => {
 export const getPost = id => dispatch => {
   dispatch(setPostLoading());
   axios
-    .get(`/api/posts/${id}`)
+    .get(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -70,7 +70,7 @@ export const getPost = id => dispatch => {
 // Delete Post
 export const deletePost = id => dispatch => {
   axios
-    .delete(`/api/posts/${id}`)
+    .delete(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_POST,
