@@ -20,9 +20,9 @@ class Header extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <div className="container">
+      <div className="container-header">
         <div className="header">
-          <NavItem classname="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
+          <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
           <img
               className="rounded-circle"
               src={user.avatar}
@@ -43,7 +43,7 @@ class Header extends Component {
     );
 
     const guestLinks = (
-      <div className="container">
+      <div>
         <div className="header">
           <NavItem href='/'><Icon>search</Icon></NavItem>
           <NavItem href='/about'>About</NavItem>

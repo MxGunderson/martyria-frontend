@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode';
 
 export const signupUser = (userData, history) => dispatch => {
   axios.post('https://floating-fjord-69030.herokuapp.com/api/users/signup', userData)
-  .then(res => history.push('/login'))
+  .then(res => history.push('/dashboard'))
   .catch(err => 
   dispatch({
     type: GET_ERRORS,
