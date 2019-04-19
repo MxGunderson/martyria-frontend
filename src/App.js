@@ -72,7 +72,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute path='/dashboard' component={Dashboard} />
               </Switch>
-              {/* Private */}
+              
               <Switch>
                 {/* Private */}
                 <PrivateRoute path='/create-profile' component={CreateProfile} />
@@ -84,11 +84,11 @@ class App extends Component {
 
               <Switch>
                 {/* Private */}
-                <Route path='/feed' component={Posts} />
+                <PrivateRoute path='/feed' component={Posts} />
               </Switch>
               {/* Private */}
               <Switch>
-                <Route exact path="/post" component={Post} />
+                <PrivateRoute exact path="/post" component={Post} />
               </Switch>
 
               <Footer className="landing" />

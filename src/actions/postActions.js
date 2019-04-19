@@ -88,7 +88,7 @@ export const deletePost = id => dispatch => {
 // Add Like
 export const addLike = id => dispatch => {
   axios
-    .post(`/api/posts/like/${id}`)
+    .post(`https://floating-fjord-69030.herokuapp.com/api/posts/like/${id}`)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -101,7 +101,7 @@ export const addLike = id => dispatch => {
 // Remove Like
 export const removeLike = id => dispatch => {
   axios
-    .post(`/api/posts/unlike/${id}`)
+    .post(`https://floating-fjord-69030.herokuapp.com/api/posts/unlike/${id}`)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -115,7 +115,7 @@ export const removeLike = id => dispatch => {
 export const addComment = (postId, commentData) => dispatch => {
   dispatch(clearErrors());
   axios
-    .post(`/api/posts/comment/${postId}`, commentData)
+    .post(`https://floating-fjord-69030.herokuapp.com/api/posts/comment/${postId}`, commentData)
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -133,7 +133,7 @@ export const addComment = (postId, commentData) => dispatch => {
 // Delete Comment
 export const deleteComment = (postId, commentId) => dispatch => {
   axios
-    .delete(`/api/posts/comment/${postId}/${commentId}`)
+    .delete(`https://floating-fjord-69030.herokuapp.com/api/posts/comment/${postId}/${commentId}`)
     .then(res =>
       dispatch({
         type: GET_POST,
