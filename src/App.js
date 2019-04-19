@@ -60,12 +60,12 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Header className="header " />
-            <div className="container">
-              <Route exact path="/home" component={Home} />
+            <Header />
               <Route exact path="/" component={Landing} />
+            
+              <Route exact path="/home" component={Home} />
               <Route path='/about' component={About} />
-              {/* <Route path='/home' component={Home} /> */}
+              
               <Route path='/contact' component={Contact} />
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
@@ -96,7 +96,7 @@ class App extends Component {
 
               <Footer className="landing" />
             </div>
-          </div>
+          
         </Router>
       </Provider>
     );
