@@ -14,7 +14,8 @@ class Landing extends Component {
                 <h3 className="display-3 mb-4">Welcome To Martyria</h3>
                 <p className="lead">
                   {' '}
-                  Create a profile, share testimonies and connect with other Believers!
+                  Create a profile to share testimonies
+                  and be encouraged in the goodness of God!
                 </p>
                 <hr />
                 <Link to="/signup" className="btn btn-lg btn-info mr-2">

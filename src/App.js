@@ -61,17 +61,13 @@ class App extends Component {
         <Router>
           <div className="App">
             <Header />
-              <Route exact path="/" component={Landing} />
-            
+              <Route exact path="/" component={Landing} />  
               <Route exact path="/home" component={Home} />
               <Route path='/about' component={About} />
-              
               <Route path='/contact' component={Contact} />
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
               <Route path='/profile' component={Profile} />
-              
-
               <Switch>
                 <PrivateRoute path='/dashboard' component={Dashboard} />
               </Switch>
@@ -96,7 +92,6 @@ class App extends Component {
 
               <Footer className="landing" />
             </div>
-          
         </Router>
       </Provider>
     );

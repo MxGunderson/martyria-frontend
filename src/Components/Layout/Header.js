@@ -50,7 +50,7 @@ class Header extends Component {
 
     return (
       <div>
-            <Navbar  className="bg-dark text-white " brand='Martyria' right>
+            <Navbar  className="bg-dark text-white" brand='Martyria' right>
               {isAuthenticated ? authLinks : guestLinks}
             </Navbar>
       </div>
