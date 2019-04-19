@@ -38,7 +38,11 @@ class PostForm extends Component {
     };
 
     this.props.addPost(newPost);
-    this.setState({title: '', author: '', story: '' });
+    this.setState({
+      title: '',
+      author: '',
+      story: ''
+    });
     console.log(newPost);
   }
 
@@ -48,7 +52,7 @@ class PostForm extends Component {
 
   render() {
     const { errors } = this.state;
-    
+
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
