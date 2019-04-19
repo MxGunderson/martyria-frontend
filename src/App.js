@@ -22,7 +22,7 @@ import Posts from './Components/posts/Posts';
 import Post from './Components/post/Post';
 import EditProfile from './Components/edit-profile/EditProfile';
 import './App.css';
-import NotFound from './Components/not-found/NotFound';
+
 
 
 
@@ -89,7 +89,6 @@ class App extends Component {
                <Switch>
                 <Route exact path="/posts" component={Posts} />
               </Switch>
-                <Route exact path="/not-found" component={NotFound} />
                 <Footer className="landing" />
             </div>
         </Router>
