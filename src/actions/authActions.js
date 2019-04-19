@@ -3,6 +3,8 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 
+// import {GET_ERRORS, SET_CURRENT_USER} from './types';
+
 // signup user
 
 export const signupUser = (userData, history) => dispatch => {
@@ -23,13 +25,13 @@ export const loginUser = userData => dispatch => {
   .then(res => {
     // SAVE TO LOCAL STORAGE
     //const { token } = res.data
-    const token = res.data; // = token
+    const {token} = res.data; // = token
     // SET TOKEN TO LOCAL STORAGE
-    localStorage.setItem('jwtToken', token);
+    localStorage.setItem('jwtToken', res.data);
     // SET TO AUTH HEADER
     setAuthToken(token);
     // DECODE TOKEN TO GET USER DATA
-    const decoded = jwt_decode(token);
+    const decoded = jwt_decode(res.data);
     // SET CURRENT USER
     dispatch(setCurrentUser(decoded));
   })

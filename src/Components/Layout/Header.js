@@ -22,22 +22,14 @@ class Header extends Component {
     const authLinks = (
       <div className="container-header">
         <div className="header">
-          <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
-          <img
-              className="rounded-circle"
-              src={user.avatar}
-              alt={user.name}
-              style={{ width: '25px', marginRight: '5px' }}
-              title="You must have a Gravatar connected to your email to display an image"
-            />
-          <NavItem href='/'><Icon>search</Icon></NavItem>
           <NavItem href='/feed'>Post Feed</NavItem>
           <NavItem href='/dashboard'>Back To Dashboard</NavItem>
           {/* <NavItem href='/home'>Home</NavItem>
           <NavItem href='/about'>About</NavItem> */}
           <NavItem href='/contact'>Contact</NavItem>
+          <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
           <NavItem href='/'><Icon>refresh</Icon></NavItem>
-          
+
         </div>
       </div>
     );
@@ -45,7 +37,7 @@ class Header extends Component {
     const guestLinks = (
       <div>
         <div className="header">
-          <NavItem href='/'><Icon>search</Icon></NavItem>
+          {/* <NavItem href='/'><Icon>search</Icon></NavItem> */}
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/contact'>Contact</NavItem>
           <NavItem href='/home'>Home</NavItem>
@@ -75,7 +67,7 @@ Header.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth
 })
 

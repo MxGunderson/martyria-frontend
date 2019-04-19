@@ -4,9 +4,12 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
+
 import { Provider } from 'react-redux';
 import store from './store';
+
 import PrivateRoute from'./Components/common/PrivateRoute';
+
 import Landing from './Components/Pages/Landing';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
@@ -84,11 +87,11 @@ class App extends Component {
 
               <Switch>
                 {/* Private */}
-                <Route path='/feed' component={Posts} />
+                <PrivateRoute path='/feed' component={Posts} />
               </Switch>
               {/* Private */}
               <Switch>
-                <Route exact path="/post" component={Post} />
+                <PrivateRoute exact path="/post" component={Post} />
               </Switch>
 
               <Footer className="landing" />
