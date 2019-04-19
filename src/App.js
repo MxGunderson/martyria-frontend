@@ -75,7 +75,7 @@ class App extends Component {
               <Switch>
                 <PrivateRoute path='/dashboard' component={Dashboard} />
               </Switch>
-              {/* Private */}
+              
               <Switch>
                 {/* Private */}
                 <PrivateRoute path='/create-profile' component={CreateProfile} />

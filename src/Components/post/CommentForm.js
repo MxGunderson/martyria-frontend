@@ -1,41 +1,71 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteComment } from '../../actions/postActions';
+import { connect } from 'react-redux';
+import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
+import { addComment } from '../../actions/postActions';
 
-class CommentItem extends Component {
-  onDeleteClick(postId, commentId) {
-    this.props.deleteComment(postId, commentId);
+class CommentForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: '',
+      errors: {}
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.errors) {
+      this.setState({ errors: newProps.errors });
+    }
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const { user } = this.props.auth;
+    const { postId } = this.props;
+
+    const newComment = {
+      text: this.state.text,
+      name: user.name,
+      avatar: user.avatar
+    };
+
+    this.props.addComment(postId, newComment);
+    this.setState({ text: '' });
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
-    const { comment, postId, auth } = this.props;
+    const { errors } = this.state;
 
     return (
-      <div className="card card-body mb-3">
-        <div className="row">
-          <div className="col-md-2">
-            <a href="profile.html">
-              <img
-                className="rounded-circle d-none d-md-block"
-                src={comment.avatar}
-                alt=""
-              />
-            </a>
-            <br />
-            <p className="text-center">{comment.name}</p>
+      <div className="post-form mb-3">
+        <div className="card card-info">
+          <div className="card-header bg-info text-white">
+            Make a comment...
           </div>
-          <div className="col-md-10">
-            <p className="lead">{comment.text}</p>
-            {comment.user === auth.user.id ? (
-              <button
-                onClick={this.onDeleteClick.bind(this, postId, comment._id)}
-                type="button"
-                className="btn btn-danger mr-1"
-              >
-                <i className="fas fa-times" />
+          <div className="card-body">
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <TextAreaFieldGroup
+                  placeholder="Reply to post"
+                  name="text"
+                  value={this.state.text}
+                  onChange={this.onChange}
+                  error={errors.text}
+                />
+              </div>
+              <button type="submit" className="btn btn-dark">
+                Submit
               </button>
-            ) : null}
+            </form>
           </div>
         </div>
       </div>
@@ -43,15 +73,16 @@ class CommentItem extends Component {
   }
 }
 
-CommentItem.propTypes = {
-  deleteComment: PropTypes.func.isRequired,
-  comment: PropTypes.object.isRequired,
+CommentForm.propTypes = {
+  addPost: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
   postId: PropTypes.string.isRequired,
-  auth: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  errors: state.errors
 });
 
-export default connect(mapStateToProps, { deleteComment })(CommentItem);
+export default connect(mapStateToProps, { addComment })(CommentForm);
