@@ -57,6 +57,8 @@ class Signup extends Component {
     // const { from } = this.props.location.state || '/Login'
     // const { fireRedirect } = this.state
     return (
+      <div className="landing">
+      <div className="dark-overlay landing-inner text-light">
       <div className="register">
         <div className="container">
           <div className="row">
@@ -95,6 +97,8 @@ class Signup extends Component {
             </div>
           </div>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

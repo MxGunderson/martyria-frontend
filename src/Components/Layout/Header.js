@@ -17,14 +17,13 @@ class Header extends Component {
   }
   render() {
 
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     const authLinks = (
       <div className="container-header">
         <div className="header">
           <NavItem href='/feed'>Post Feed</NavItem>
           <NavItem href='/dashboard'>Back To Dashboard</NavItem>
-          
           <NavItem href='/contact'>Contact</NavItem>
           <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
           <NavItem href='/'><Icon>refresh</Icon></NavItem>

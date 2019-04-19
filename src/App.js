@@ -4,12 +4,9 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
-
 import { Provider } from 'react-redux';
 import store from './store';
-
 import PrivateRoute from'./Components/common/PrivateRoute';
-
 import Landing from './Components/Pages/Landing';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
@@ -24,33 +21,33 @@ import Profile from './Components/Profile/Profile';
 import Posts from './Components/posts/Posts';
 import Post from './Components/post/Post';
 import EditProfile from './Components/edit-profile/EditProfile';
-
-// import 'react-materialize';
-
 import './App.css';
+import NotFound from './Components/not-found/NotFound';
 
 
 
 // Check for token
-if (localStorage.jwt_decode) {
-  // set auth token header auth
+if (localStorage.jwtToken) {
+  // Set auth token header auth
   setAuthToken(localStorage.jwtToken);
-  //decode token and get user info and exp
+  // Decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
-  // set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded, localStorage.jwtToken));
+  // Set user and isAuthenticated
+  store.dispatch(setCurrentUser(decoded));
 
-  //check for expired token - which is set on the backend - check to see if that has been implemented
-  const currentTime = Date.now() / 1000
-  if (decoded.exp < currentTime) {
-    //logout user
-    store.dispatch(logoutUser)
-    //TODO: Clear current profile
-    store.dispatch(clearCurrentProfile());
-    //Redirect to login
-    window.location.href = '/login';
-  }
-}
+
+
+ // Check for expired token
+ const currentTime = Date.now() / 1000;
+ if (decoded.exp < currentTime) {
+   // Logout user
+   store.dispatch(logoutUser());
+   // Clear current Profile
+   store.dispatch(clearCurrentProfile());
+   // Redirect to login
+   window.location.href = '/login';
+ }
+ }
 
 
 
@@ -83,14 +80,17 @@ class App extends Component {
 
               <Switch>
                 {/* Private */}
-                <PrivateRoute path='/feed' component={Posts} />
+                <Route path='/feed' component={Posts} />
               </Switch>
               {/* Private */}
               <Switch>
-                <PrivateRoute exact path="/post" component={Post} />
+                <Route exact path="/post" component={Post} />
               </Switch>
-
-              <Footer className="landing" />
+               <Switch>
+                <Route exact path="/posts" component={Posts} />
+              </Switch>
+                <Route exact path="/not-found" component={NotFound} />
+                <Footer className="landing" />
             </div>
         </Router>
       </Provider>
