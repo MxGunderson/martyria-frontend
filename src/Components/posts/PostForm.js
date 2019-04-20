@@ -28,20 +28,20 @@ class PostForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const { user } = this.props.auth;
+    
 
     const newPost = {
       story: this.state.story,
       title: this.state.title,
       author: this.state.author,
-      name: user.name,
+      
     };
 
     this.props.addPost(newPost);
     this.setState({
+      story: '',
       title: '',
-      author: '',
-      story: ''
+      author: ''
     });
     console.log(newPost);
   }
