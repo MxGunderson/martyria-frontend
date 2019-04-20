@@ -20,6 +20,7 @@ import CreateProfile from './Components/create-profile/CreateProfile';
 import Profile from './Components/Profile/Profile';
 import Posts from './Components/posts/Posts';
 import Post from './Components/post/Post';
+import EditPost from './Components/posts/EditPost';
 import EditProfile from './Components/edit-profile/EditProfile';
 import './App.css';
 
@@ -86,11 +87,15 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/post" component={Post} />
               </Switch>
+              <Switch>
+                <PrivateRoute exact path="/editpost/:id" component={EditPost} />
+              </Switch>
                <Switch>
                 <PrivateRoute exact path="/posts" component={Posts} />
               </Switch>
-                <Footer className="landing" />
+                <Footer className="footer" />
             </div>
+           
         </Router>
       </Provider>
     );

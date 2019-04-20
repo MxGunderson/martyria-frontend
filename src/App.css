@@ -77,10 +77,8 @@
     align-content: center;
   }
 
-  footer {
-    position: relative;
-  }
-}
+ 
+
 
 
 .Matt {
@@ -110,9 +108,23 @@
   margin-top: 10px;
 }
 
-.avatar{
+.avatar-feed{
   height: 150px;
   width: auto;
   border-radius: 90%;
-  margin-bottom: 10px;
+ float: left;
+ 
 }
+
+.text-center {
+  float: left;
+  margin-left: 20px;
+  text-align: center;
+}
+}
+ Footer {
+   position: sticky;
+   margin: 0%;
+   padding: 0%;
+
+ }

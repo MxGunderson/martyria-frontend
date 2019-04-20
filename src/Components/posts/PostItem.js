@@ -36,13 +36,13 @@ class PostItem extends Component {
           <div className="col-md-2">
             <a href="profile.html">
               <img
-                className="avatar" src = {require('../Img/avatar.jpg')}
-                alt=""
+                className="avatar-feed" src = {require('../Img/avatar.jpg')}
+                alt="Avatar"
               />
             </a>
             <br />
-            <p className="text-center">{post.author}</p>
           </div>
+            <p className="text-center">Author: {post.author}</p>
           <div className="col-md-10">
             <h1 className="lead">{post.title}</h1><hr />
             <p className="lead">{post.story}</p>
@@ -60,8 +60,18 @@ class PostItem extends Component {
                   />
                   <span className="badge badge-light"></span>
                 </button>
-              
-                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
+              <Link to={`/editpost/${post._id}`}>
+            <i
+              className="fas fa-pencil-alt"
+              style={{
+                cursor: 'pointer',
+                float: 'right',
+                color: 'black',
+                marginRight: '1rem'
+              }}
+            />
+          </Link>
+                <Link to={`/editpost/${post._id}`} className="btn btn-info mr-1">
                   Comments
                 </Link>
                 {post.user === auth.user.id ? (
@@ -70,8 +80,12 @@ class PostItem extends Component {
                     type="button"
                     className="btn btn-danger mr-1"
                   >
+                  
                     <i className="fas fa-times" />
                   </button>
+                  
+
+
                 ) : null}
               </span>
             ) : null}

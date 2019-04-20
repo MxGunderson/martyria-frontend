@@ -7,7 +7,8 @@ import {
   GET_POSTS,
   GET_POST,
   POST_LOADING,
-  DELETE_POST
+  DELETE_POST,
+  UPDATE_POST
 } from './types';
 
 // Add Post
@@ -49,23 +50,23 @@ export const getPosts = postData => dispatch => {
 };
 
 // Get Post
-export const getPost = id => dispatch => {
-  dispatch(setPostLoading());
-  axios
-    .get(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
-    .then(res =>
-      dispatch({
-        type: GET_POST,
-        payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_POST,
-        payload: null
-      })
-    );
-};
+// export const getPost = id => dispatch => {
+//   dispatch(setPostLoading());
+//   axios
+//     .get(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
+//     .then(res =>
+//       dispatch({
+//         type: GET_POST,
+//         payload: res.data
+//       })
+//     )
+//     .catch(err =>
+//       dispatch({
+//         type: GET_POST,
+//         payload: null
+//       })
+//     );
+// };
 
 // Delete Post
 export const deletePost = id => dispatch => {
@@ -99,9 +100,9 @@ export const addLike = id => dispatch => {
 };
 
 // Remove Like
-export const removeLike = id => dispatch => {
+export const removeLike = (id, postData) => dispatch => {
   axios
-    .post(`https://floating-fjord-69030.herokuapp.com/api/posts/unlike/${id}`)
+    .post(`https://floating-fjord-69030.herokuapp.com/api/posts/unlike/${id}`, postData)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -161,3 +162,25 @@ export const clearErrors = () => {
     type: CLEAR_ERRORS
   };
 };
+
+
+export const updatePost = post => async dispatch => {
+  const res = await axios.put(
+    `https://floating-fjord-69030.herokuapp.com/api/posts/${post.id}`,
+    post
+  );
+  dispatch({
+    type: UPDATE_POST,
+    payload: res.data
+  });
+};
+
+
+// Get Post
+export const getPost = id => async dispatch => {
+  const res = await axios.get(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
+  dispatch({
+    type: GET_POST,
+    payload: res.data
+  });
+}

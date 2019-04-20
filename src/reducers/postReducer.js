@@ -3,7 +3,8 @@ import {
   GET_POSTS,
   GET_POST,
   DELETE_POST,
-  POST_LOADING
+  POST_LOADING,
+  UPDATE_POST
 } from '../actions/types';
 
 const initialState = {
@@ -40,6 +41,15 @@ export default function(state = initialState, action) {
       return {
         ...state,
         posts: state.posts.filter(post => post._id !== action.payload)
+      };
+      case UPDATE_POST:
+      return {
+        ...state,
+        posts: state.posts.map(
+          post =>
+            post.id === action.payload.id
+              ? (post = action.payload)
+              : post)
       };
     default:
       return state;
