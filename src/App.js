@@ -80,14 +80,14 @@ class App extends Component {
 
               <Switch>
                 {/* Private */}
-                <Route path='/feed' component={Posts} />
+                <PrivateRoute path='/feed' component={Posts} />
               </Switch>
               {/* Private */}
               <Switch>
-                <Route exact path="/post" component={Post} />
+                <PrivateRoute exact path="/post" component={Post} />
               </Switch>
                <Switch>
-                <Route exact path="/posts" component={Posts} />
+                <PrivateRoute exact path="/posts" component={Posts} />
               </Switch>
                 <Footer className="landing" />
             </div>
