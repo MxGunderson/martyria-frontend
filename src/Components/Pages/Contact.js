@@ -17,17 +17,18 @@ class Contact extends Component {
                   <div class="grid-container">
                     <div class="col-md-6">
                       <h3>Cameron LaVallie</h3>
-                      <img
-                        src="./Img/camera-lens-clouds-hand-1208074.jpg"
-                        alt="Cam"
-                      />
+                      < img className = "Cam" src = {require('../Img/cam.jpg')} alt="Cam"/>
+                      <p className="dev-info">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit...
+                      </p>
 
                       <p />
                     </div>
                     <div class="col-md-6">
                       <h3>Matthew Gunderson</h3>
-                      <img src="matt.jpg" alt="Matt" />
-                      <p>
+                      < img className = "Matt" src = {require('../Img/matt.jpg')} alt="Matt"/>
+                      <p className="dev-info">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit...
                       </p>
@@ -35,16 +36,16 @@ class Contact extends Component {
                     <br />
                     <div class="col-md-6">
                       <h3>Morgan Muse</h3>
-                      <img src="mo.jpg" alt="Mo" />
-                      <p>
+                      < img className = "Mo" src = {require('../Img/mo.jpg')} alt="Mo"/>
+                      <p className="dev-info">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit...
                       </p>
                     </div>
                     <div class="col-md-6">
                       <h3>Paul Rase</h3>
-                      <img src="paul.jpg" alt="Paul" />
-                      <p>
+                      < img className = "Paul" src = {require('../Img/paul.jpg')} alt="Paul"/>
+                      <p className="dev-info"> 
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit...
                       </p>

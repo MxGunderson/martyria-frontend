@@ -29,10 +29,10 @@ class PostItem extends Component {
 
   render() {
     const { post, auth, showActions } = this.props;
-
+    console.log(post);
     return (
       <div className="card card-body mb-3">
-        <div className="row">
+        {post && <div className="row">
           <div className="col-md-2">
             <a href="profile.html">
               <img
@@ -42,10 +42,11 @@ class PostItem extends Component {
               />
             </a>
             <br />
-            <p className="text-center">{post.name}</p>
+            <p className="text-center">{post.author}</p>
           </div>
           <div className="col-md-10">
-            <p className="lead">{post.text}</p>
+            <p className="lead">{post.title}</p>
+            <p className="lead">{post.story}</p>
             {showActions ? (
               <span>
                 <button
@@ -76,7 +77,7 @@ class PostItem extends Component {
               </span>
             ) : null}
           </div>
-        </div>
+        </div>}
       </div>
     );
   }
@@ -90,7 +91,11 @@ PostItem.propTypes = {
   deletePost: PropTypes.func.isRequired,
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired,
-  post: PropTypes.object.isRequired,
+  post: PropTypes.shape({
+    author: PropTypes.string,
+    story: PropTypes.string,
+    avatar: PropTypes.string,
+  }),
   auth: PropTypes.object.isRequired
 };
 

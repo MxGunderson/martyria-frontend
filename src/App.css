@@ -81,3 +81,31 @@
     position: relative;
   }
 }
+
+
+.Matt {
+   height: 300px;
+   width: auto;
+   border-radius: 50%;
+}
+.Cam {
+  height: 300px;
+  width: auto;
+  border-radius: 50%;
+
+}
+.Paul {
+  height: 300px;
+  width: auto;
+  border-radius: 20%;
+
+}
+.Mo{
+  height: 300px;
+  width: auto;
+  border-radius: 20%;
+}
+
+.dev-info {
+  margin-top: 10px;
+}
