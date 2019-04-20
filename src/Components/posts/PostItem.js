@@ -18,14 +18,14 @@ class PostItem extends Component {
     this.props.removeLike(id);
   }
 
-  // findUserLike(likes) {
-  //   const { auth } = this.props;
-  //   if (likes.filter(like => like.user === auth.user.id).length > 0) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+//  findUserLike(likes) {
+//     const { auth } = this.props;
+//     if (likes.filter(like => like.user === auth.user.id).length > 0) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
 
   render() {
     const { post, auth, showActions } = this.props;
@@ -36,8 +36,7 @@ class PostItem extends Component {
           <div className="col-md-2">
             <a href="profile.html">
               <img
-                className="rounded-circle d-none d-md-block"
-                src={post.avatar}
+                className="avatar" src = {require('../Img/avatar.jpg')}
                 alt=""
               />
             </a>
@@ -45,7 +44,7 @@ class PostItem extends Component {
             <p className="text-center">{post.author}</p>
           </div>
           <div className="col-md-10">
-            <p className="lead">{post.title}</p>
+            <h1 className="lead">{post.title}</h1><hr />
             <p className="lead">{post.story}</p>
             {showActions ? (
               <span>
@@ -56,7 +55,7 @@ class PostItem extends Component {
                 >
                   <i
                     className={classnames('fas fa-thumbs-up', {
-                      // 'text-info' this.findUserLike(post.likes)
+                      // 'text-info': this.findUserLike(post.likes)
                     })}
                   />
                   <span className="badge badge-light"></span>

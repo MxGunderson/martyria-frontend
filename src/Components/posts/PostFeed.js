@@ -6,7 +6,7 @@ class PostFeed extends Component {
   render() {
     const { posts } = this.props;
     // console.log(posts);
-    posts.map(post => <PostItem />)
+    // posts.map(post => <PostItem />)
     
     return posts.map(post => <PostItem key={post._id} post={post} />);
 
@@ -19,3 +19,5 @@ PostFeed.propTypes = {
 
 
 export default PostFeed;
+
+

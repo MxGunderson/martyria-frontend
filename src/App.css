@@ -97,15 +97,22 @@
 .Paul {
   height: 300px;
   width: auto;
-  border-radius: 20%;
+  border-radius: 50%;
 
 }
 .Mo{
   height: 300px;
   width: auto;
-  border-radius: 20%;
+  border-radius: 50%;
 }
 
 .dev-info {
   margin-top: 10px;
+}
+
+.avatar{
+  height: 150px;
+  width: auto;
+  border-radius: 90%;
+  margin-bottom: 10px;
 }
