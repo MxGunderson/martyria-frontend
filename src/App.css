@@ -34,6 +34,19 @@
     padding-top: 80px;
   }
 
+  .dashboard {
+    position: relative;
+    background: url("./Components/Img/homeBanner.jpg")
+      no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin-top: 0px;
+    margin-bottom: -50px;
+  }
+
+  
+
   .dark-overlay {
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;

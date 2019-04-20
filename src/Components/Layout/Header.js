@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavItem, Icon } from 'react-materialize';
+import { Navbar, NavItem} from 'react-materialize';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
@@ -22,11 +22,14 @@ class Header extends Component {
     const authLinks = (
       <div className="container-header">
         <div className="header">
-          <NavItem href='/feed'>Post Feed</NavItem>
-          <NavItem href='/dashboard'>Back To Dashboard</NavItem>
+
+          <NavItem href='/home'>Home</NavItem>
           <NavItem href='/contact'>Contact</NavItem>
+          <NavItem href='/about'>About</NavItem>
+          <NavItem href='/feed'>Post Feed</NavItem>
+          <NavItem href='/dashboard'>Dashboard</NavItem>
           <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
-          <NavItem href='/'><Icon>refresh</Icon></NavItem>
+          {/* <NavItem href='/'><Icon>refresh</Icon></NavItem> */}
 
         </div>
       </div>
@@ -36,12 +39,12 @@ class Header extends Component {
       <div>
         <div className="header">
           {/* <NavItem href='/'><Icon>search</Icon></NavItem> */}
+          <NavItem href='/home'>Home</NavItem>
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/contact'>Contact</NavItem>
-          <NavItem href='/home'>Home</NavItem>
           <NavItem href='/login'>Login</NavItem>
           <NavItem href='/signup'>Signup</NavItem>
-          <NavItem href='/feed'><Icon>refresh</Icon></NavItem>
+          {/* <NavItem href='/feed'><Icon>refresh</Icon></NavItem> */}
         </div>
       </div>
     );
@@ -49,9 +52,9 @@ class Header extends Component {
 
     return (
       <div>
-            <Navbar  className="bg-dark text-white" brand='Martyria' right>
-              {isAuthenticated ? authLinks : guestLinks}
-            </Navbar>
+        <Navbar className="bg-dark text-white" brand='Martyria' right>
+          {isAuthenticated ? authLinks : guestLinks}
+        </Navbar>
       </div>
     )
   }
