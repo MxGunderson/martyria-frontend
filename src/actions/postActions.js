@@ -169,6 +169,7 @@ export const updatePost = post => async dispatch => {
     `https://floating-fjord-69030.herokuapp.com/api/posts/${post.id}`,
     post
   );
+  console.log(post.id);
   dispatch({
     type: UPDATE_POST,
     payload: res.data

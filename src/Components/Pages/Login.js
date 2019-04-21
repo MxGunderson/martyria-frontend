@@ -37,6 +37,21 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+  const {email, password } = this.state;
+    
+    // Check For Errors
+    if (password=== '') {
+      this.setState({ errors: { password: 'password is required' } });
+      return;
+    }
+
+    if (email === '') {
+      this.setState({ errors: { email: 'email is required' } });
+      return;
+    }
+
+
+
     const userData = {
       email: this.state.email,
       password: this.state.password
