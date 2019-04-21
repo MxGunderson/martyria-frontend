@@ -42,6 +42,25 @@ class Signup extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
+   const {email, password, name } = this.state;
+    
+    // Check For Errors
+    if (password=== '') {
+      this.setState({ errors: { password: 'password is required' } });
+      return;
+    }
+
+    if (email === '') {
+      this.setState({ errors: { email: 'email is required' } });
+      return;
+    }
+
+    if (name === '') {
+      this.setState({ errors: { name: 'name is required' } });
+      return;
+    }
+
+
     const newUser = {
       name: this.state.name,
       email: this.state.email,

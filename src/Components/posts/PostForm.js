@@ -28,7 +28,24 @@ class PostForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    const {story, title, author } = this.state;
     
+    // Check For Errors
+    if (title === '') {
+      this.setState({ errors: { title: 'title is required' } });
+      return;
+    }
+
+    if (story === '') {
+      this.setState({ errors: { story: 'story is required' } });
+      return;
+    }
+
+    if (author === '') {
+      this.setState({ errors: { author: 'author is required' } });
+      return;
+    }
+
 
     const newPost = {
       story: this.state.story,

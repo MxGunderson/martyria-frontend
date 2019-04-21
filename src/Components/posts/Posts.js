@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PostForm from './PostForm';
 import PostFeed from './PostFeed';
 import Spinner from '../common/Spinner';
-import { getPosts } from '../../actions/postActions';
+import { getPosts, updatePost } from '../../actions/postActions';
 
 class Posts extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class Posts extends Component {
     if (posts === null || loading) {
       postContent = <Spinner />;
     } else {
-      postContent = <PostFeed posts={posts} />;
+      postContent = <PostFeed posts={posts} updatePost={updatePost} />;
     }
 
     return (

@@ -109,12 +109,12 @@ class EditPost extends Component {
                   onChange={this.onChange}
                   error={errors.story}
                 />
-              </div>
               <input
               type="submit"
               value="Update Post"
               className="btn btn-light btn-block"
             />
+              </div>
             </form>
           </div>
         </div>
@@ -126,7 +126,7 @@ class EditPost extends Component {
 EditPost.propTypes = {
   post: PropTypes.func.isRequired,
   getPost: PropTypes.func.isRequired,
-  
+  auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
