@@ -1,4 +1,5 @@
 @media only screen and (max-width: 3200px) {
+
   body {
     margin: 0;
     padding: 0;
@@ -27,7 +28,7 @@
     background-position: center;
     height: 200vh;
     margin-top: 0px;
-    margin-bottom: -50px;
+    margin-bottom: -50px; 
   }
 
   .landing-inner {
