@@ -1,5 +1,4 @@
 @media only screen and (max-width: 3200px) {
-
   body {
     margin: 0;
     padding: 0;
@@ -26,9 +25,9 @@
       no-repeat;
     background-size: cover;
     background-position: center;
-    height: 200vh;
+    height: 250vh;
     margin-top: 0px;
-    margin-bottom: -50px; 
+    margin-bottom: -50px;
   }
 
   .landing-inner {
@@ -37,16 +36,13 @@
 
   .dashboard {
     position: relative;
-    background: url("./Components/Img/homeBanner.jpg")
-      no-repeat;
+    background: url("./Components/Img/homeBanner.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
     margin-top: 0px;
     margin-bottom: -50px;
   }
-
-  
 
   .dark-overlay {
     background-color: rgba(0, 0, 0, 0.7);
@@ -91,55 +87,48 @@
     align-content: center;
   }
 
- 
+  .Matt {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+  }
+  .Cam {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+  }
+  .Paul {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+  }
+  .Mo {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+  }
 
+  .dev-info {
+    margin-top: 10px;
+  }
 
+  .avatar-feed {
+    height: 150px;
+    width: auto;
+    border-radius: 90%;
+    float: left;
+  }
 
-.Matt {
-   height: 300px;
-   width: auto;
-   border-radius: 50%;
+  .text-center {
+    float: left;
+    margin-left: 20px;
+    text-align: center;
+  }
 }
-.Cam {
-  height: 300px;
-  width: auto;
-  border-radius: 50%;
-
-}
-.Paul {
-  height: 300px;
-  width: auto;
-  border-radius: 50%;
-
-}
-.Mo{
-  height: 300px;
-  width: auto;
-  border-radius: 50%;
-}
-
-.dev-info {
-  margin-top: 10px;
-}
-
-.avatar-feed{
-  height: 150px;
-  width: auto;
-  border-radius: 90%;
- float: left;
- 
-}
-
-.text-center {
-  float: left;
-  margin-left: 20px;
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
 }
-}
-  Footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-  }
