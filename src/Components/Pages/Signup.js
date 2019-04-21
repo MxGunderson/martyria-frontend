@@ -23,7 +23,7 @@ class Signup extends Component {
   }
 
   componentDidMount() {
-    if(this.props.auth.isAuthenticated) {
+    if (this.props.auth.isAuthenticated) {
       this.props.history.push('/dashboard')
     }
   }
@@ -58,47 +58,47 @@ class Signup extends Component {
     // const { fireRedirect } = this.state
     return (
       <div className="landing">
-      <div className="dark-overlay landing-inner text-light">
-      <div className="register">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="display-4 text-center">Sign Up</h1>
-                <TextFieldGroup
-                  placeholder="Name"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.onChange}
-                  error={errors.name}
-                />
-                <TextFieldGroup
-                  placeholder="Email"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                  info=""
-                />
-                <TextFieldGroup
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-                  {/* {fireRedirect && (
+        <div className="dark-overlay landing-inner text-light">
+          <div className="register">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-8 m-auto">
+                  <form noValidate onSubmit={this.onSubmit}>
+                    <h1 className="display-4 text-center">Sign Up</h1>
+                    <TextFieldGroup
+                      placeholder="Name"
+                      name="name"
+                      value={this.state.name}
+                      onChange={this.onChange}
+                      error={errors.name}
+                    />
+                    <TextFieldGroup
+                      placeholder="Email"
+                      name="email"
+                      type="email"
+                      value={this.state.email}
+                      onChange={this.onChange}
+                      error={errors.email}
+                      info=""
+                    />
+                    <TextFieldGroup
+                      placeholder="Password"
+                      name="password"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.onChange}
+                      error={errors.password}
+                    />
+                    <input type="submit" className="btn btn-info btn-block mt-4" />
+                    {/* {fireRedirect && (
                 <Redirect to={from || '/Login'} />
               )} */}
-              </form>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      </div>
       </div>
     );
   }

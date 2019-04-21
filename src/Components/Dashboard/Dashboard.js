@@ -25,62 +25,68 @@ class Dashboard extends Component {
     if (profile === null || loading || !user) {
       dashboardContent = <Spinner />
     } else {
-      dashboardContent = (
-        <div>
+        dashboardContent = (
+          <div>
+            <h3 
+            style={{ color: 'white', 
+            textAlign: 'center' }} >Welcome <Link to={`/profile/_id/${profile.name}`}> {user.name} </Link></h3>
+            {/* <p>You have not yet setup a profile, please add some info</p> */}
+            <div style={{ textAlign: 'center' }}>
+              
+              <ProfileActions />
+              <br />
+              <Link to='/create-profile' 
+              style={{ backgroundColor: 'black' }} 
+              className='waves-effect waves-light btn'>Create Profile</Link>
+            </div>
+          </div >
+        );
+      }
+      // //check if logged in user has profile data
+      // if (Object.keys(profile).length > 0) {
+      //   console.log('im here');
+      //   dashboardContent = (
+      //     <div>
+      //       <p className='lead text-muted'>
+      //         Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+      //       </p>
+      //       {/* <div style={{ marginBottom: '60px' }} />
+      //       <button onClick={this.onDeleteClickbind(this)} className='btn btn-danger'>Delete my account</button>
+      //       profileActions is supposed to go here */}
+      //     </div>
+      //   )
+      // } else {
+      //   console.log('kidding im here');
 
-          <p className='lead text-muted'>Welcome <Link to={`/profile/_id/${profile.name}`}> {user.name} </Link></p>
-          <p>You have not yet setup a profile, please add some info</p>
-          <ProfileActions />
-          <br />
-          <Link to='/create-profile' style={{backgroundColor: 'black'}} className='waves-effect waves-light btn'>Create Profile</Link>
-        </div>
-      );
-    }
-    // //check if logged in user has profile data
-    // if (Object.keys(profile).length > 0) {
-    //   console.log('im here');
-    //   dashboardContent = (
-    //     <div>
-    //       <p className='lead text-muted'>
-    //         Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
-    //       </p>
-    //       {/* <div style={{ marginBottom: '60px' }} />
-    //       <button onClick={this.onDeleteClickbind(this)} className='btn btn-danger'>Delete my account</button>
-    //       profileActions is supposed to go here */}
-    //     </div>
-    //   )
-    // } else {
-    //   console.log('kidding im here');
+      //   //User is logged in but has no profile
 
-    //   //User is logged in but has no profile
+      // }
+      //}
 
-    // }
-    //}
-
-    return (
-      <div className='dashboard'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-12'>
-              <h1 className='display-4'>Dashboard</h1>
-              {dashboardContent}
+      return (
+        <div className='dashboard'>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-md-12'>
+                <h1 className='display-4' style={{ color: 'white', textAlign: 'center' }}>Dashboard</h1>
+                {dashboardContent}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
-}
 
-Dashboard.propTypes = {
-  getCurrentProfile: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
-}
+  Dashboard.propTypes = {
+    getCurrentProfile: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    profile: PropTypes.object.isRequired
+  }
 
-const mapStateToProps = state => ({
-  profile: state.profile,
-  auth: state.auth
-})
+  const mapStateToProps = state => ({
+    profile: state.profile,
+    auth: state.auth
+  })
 
-export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Dashboard);
+  export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Dashboard);

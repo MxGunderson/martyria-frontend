@@ -35,11 +35,7 @@ class CreateProfile extends Component {
         if (nextProps.profile.profile) {
             const profile = nextProps.profile;
 
-            //Bring skills array back to CSV
-            //this doesn't work.
-
-
-            //If profile feild doesnt exist make empty string
+            //If profile field doesnt exist make empty string
             profile.location = !isEmpty(profile.location) ? profile.location : '';
             profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
 
@@ -47,7 +43,7 @@ class CreateProfile extends Component {
             this.setState({
                 name: profile.name,
                 location: profile.location,
-                bio: profile.bio,
+                bio: profile.bio
 
             })
         }

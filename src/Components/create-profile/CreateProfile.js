@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { createInfo } from '../../actions/profileActions';
@@ -30,12 +29,13 @@ class CreateProfile extends Component {
         e.preventDefault();
 
         const profileData = {
-            name: this.state.handle,
+            name: this.state.name,
             location: this.state.location,
             bio: this.state.bio
         };
 
-        this.props.createInfo(profileData, this.props.history);
+        this.props.createProfile(profileData, this.props.history);
+        //createInfo
     }
 
     onChange(e) {
@@ -91,6 +91,7 @@ class CreateProfile extends Component {
                                 </div>
                                 {socialInputs} */}
                                 <input type='submit' value='Submit' className='btn btn-info btn-block mt-4' />
+
                             </form>
                         </div>
                     </div>
