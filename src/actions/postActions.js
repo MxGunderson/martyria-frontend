@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 import {
   ADD_POST,
@@ -9,13 +9,15 @@ import {
   POST_LOADING,
   DELETE_POST,
   UPDATE_POST
-} from './types';
+} from "./types";
+
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 // Add Post
 export const addPost = postData => dispatch => {
   dispatch(clearErrors());
   axios
-    .post('https://floating-fjord-69030.herokuapp.com/api/posts', postData)
+    .post(`${baseUrl}/posts`, postData)
     .then(res =>
       dispatch({
         type: ADD_POST,
@@ -34,7 +36,7 @@ export const addPost = postData => dispatch => {
 export const getPosts = postData => dispatch => {
   dispatch(setPostLoading());
   axios
-    .get('https://floating-fjord-69030.herokuapp.com/api/posts', postData)
+    .get(`${baseUrl}/posts`, postData)
     .then(res =>
       dispatch({
         type: GET_POSTS,
@@ -52,7 +54,7 @@ export const getPosts = postData => dispatch => {
 // Delete Post
 export const deletePost = id => dispatch => {
   axios
-    .delete(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
+    .delete(`${baseUrl}/posts/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_POST,
@@ -70,7 +72,7 @@ export const deletePost = id => dispatch => {
 // Add Like
 export const addLike = id => dispatch => {
   axios
-    .post(`https://floating-fjord-69030.herokuapp.com/api/posts/like/${id}`)
+    .post(`${baseUrl}/posts/like/${id}`)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -83,7 +85,7 @@ export const addLike = id => dispatch => {
 // Remove Like
 export const removeLike = (id, postData) => dispatch => {
   axios
-    .post(`https://floating-fjord-69030.herokuapp.com/api/posts/unlike/${id}`, postData)
+    .post(`${baseUrl}posts/unlike/${id}`, postData)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -97,7 +99,7 @@ export const removeLike = (id, postData) => dispatch => {
 export const addComment = (postId, commentData) => dispatch => {
   dispatch(clearErrors());
   axios
-    .post(`/api/posts/comment/${postId}`, commentData)
+    .post(`${baseUrl}/api/posts/comment/${postId}`, commentData)
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -115,7 +117,7 @@ export const addComment = (postId, commentData) => dispatch => {
 // Delete Comment
 export const deleteComment = (postId, commentId) => dispatch => {
   axios
-    .delete(`/api/posts/comment/${postId}/${commentId}`)
+    .delete(`${baseUrl}posts/comment/${postId}/${commentId}`)
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -144,24 +146,21 @@ export const clearErrors = () => {
   };
 };
 
-//updates posts
 export const updatePost = post => async dispatch => {
-  const res = await axios.put(
-    `https://floating-fjord-69030.herokuapp.com/api/posts/${post.id}`,
-    post
-  );
+  const res = await axios.put(`${baseUrl}/posts/${post.id}`, post);
+  console.log(post.id);
+  
   dispatch({
     type: UPDATE_POST,
     payload: res.data
   });
 };
 
-
 // Get Post
 export const getPost = id => async dispatch => {
-  const res = await axios.get(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
+  const res = await axios.get(`${baseUrl}/posts/${id}`);
   dispatch({
     type: GET_POST,
     payload: res.data
   });
-}
+};

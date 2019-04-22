@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 import {
   GET_PROFILE,
@@ -7,13 +7,15 @@ import {
   CLEAR_CURRENT_PROFILE,
   GET_ERRORS,
   SET_CURRENT_USER
-} from './types';
+} from "./types";
+
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 // Get current profile
 export const getCurrentProfile = userData => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get('https://floating-fjord-69030.herokuapp.com/api/users/me', userData)
+    .get(`${baseUrl}/users/me`, userData)
     .then(res =>
       dispatch({
         type: GET_PROFILE,
@@ -28,11 +30,11 @@ export const getCurrentProfile = userData => dispatch => {
     );
 };
 
-// Get profile by handle 
+// Get profile by handle
 export const getProfileByHandle = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get(`https://floating-fjord-69030.herokuapp.com/api/users/me`)
+    .get(`${baseUrl}/users/me`)
     .then(res =>
       dispatch({
         type: GET_PROFILE,
@@ -50,8 +52,8 @@ export const getProfileByHandle = () => dispatch => {
 //Create info FOR the Profile
 export const createInfo = (profileData, history) => dispatch => {
   axios
-    .post('https://floating-fjord-69030.herokuapp.com/api/profiles', profileData)
-    .then(res => history.push('/dashboard'))
+    .post(`${baseUrl}/profiles`, profileData)
+    .then(res => history.push("/dashboard"))
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -65,7 +67,7 @@ export const createInfo = (profileData, history) => dispatch => {
 // Delete Experience
 export const deleteExperience = id => dispatch => {
   axios
-    .delete(`https://floating-fjord-69030.herokuapp.com/api/profile/experience/${id}`)
+    .delete(`${baseUrl}/profile/experience/${id}`)
     .then(res =>
       dispatch({
         type: GET_PROFILE,
@@ -85,7 +87,7 @@ export const deleteExperience = id => dispatch => {
 export const getProfiles = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get('https://floating-fjord-69030.herokuapp.com/api/profile/all')
+    .get(`${baseUrl}/profile/all`)
     .then(res =>
       dispatch({
         type: GET_PROFILES,
@@ -102,9 +104,9 @@ export const getProfiles = () => dispatch => {
 
 // Delete account & profile
 export const deleteAccount = () => dispatch => {
-  if (window.confirm('Are you sure? This can NOT be undone!')) {
+  if (window.confirm("Are you sure? This can NOT be undone!")) {
     axios
-      .delete('https://floating-fjord-69030.herokuapp.com/api/sprofile')
+      .delete(`${baseUrl}/sprofile`)
       .then(res =>
         dispatch({
           type: SET_CURRENT_USER,
