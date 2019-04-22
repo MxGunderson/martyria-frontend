@@ -10,14 +10,6 @@ class PostItem extends Component {
     this.props.deletePost(id);
   }
 
-  onLikeClick(id) {
-    this.props.addLike(id);
-  }
-
-  onUnlikeClick(id) {
-    this.props.removeLike(id);
-  }
-
   render() {
     const { post, auth, showActions } = this.props;
     console.log(post);
@@ -39,28 +31,17 @@ class PostItem extends Component {
             <p className="lead">{post.story}</p>
             {showActions ? (
               <span>
-                <button onClick={this.onLikeClick.bind(this, post._id)}
-                  type="button"
-                  className="btn btn-light mr-1" style={{background: '#4267B2'}}>
-                  <i className={('fas fa-thumbs-up')}  />
-                  <span className="badge badge-light"></span>
-                </button>
-                
+  
                 <Link to={`/editpost/${post._id}`}>
-                  <i className="fas fa-pencil-alt" style={{ cursor: 'pointer', float: 'right', color: 'black', marginRight: '1rem' }} />
-                </Link>
-
-                <Link to={`/editpost/${post._id}`} className="btn btn-info mr-1" style={{ background: '#5C5D5F' }}>
-                  Comment
+                  <i className="fas fa-pencil-alt" style={{ cursor: 'pointer', float: 'left', color: 'black', marginRight: '1rem', marginTop: '1rem' }} />
                 </Link>
 
                 {post.user === auth.user.id ? (
                   <button onClick={this.onDeleteClick.bind(this, post._id)}
                     type="button"
-                    className="btn btn-danger mr-1" style={{ background: '#980F06' }}>
+                    className="btn btn-danger mr-1" style={{ background: '#980F06', float: 'right' }}>
                     <i className="fas fa-times" />
                   </button>
-
 
 
                 ) : null}
@@ -96,3 +77,6 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, { deletePost, addLike, removeLike })(
   PostItem
 );
+
+
+
