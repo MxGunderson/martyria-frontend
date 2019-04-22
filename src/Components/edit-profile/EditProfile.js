@@ -57,11 +57,6 @@ class CreateProfile extends Component {
             location: this.state.location,
             status: this.state.status,
             bio: this.state.bio,
-            // twitter: this.state.twitter,
-            // facebook: this.state.facebook,
-            // linkedin: this.state.linkedin,
-            // youtube: this.state.youtube,
-            // instagram: this.state.instagram
         };
 
         this.props.createInfo(profileData, this.props.history);
@@ -104,19 +99,6 @@ class CreateProfile extends Component {
                                     // error={errors.bio}
                                     info='Tell us a little about yourself!'
                                 />
-
-                                {/* toggle social Inputs */}
-                                {/* <div className='mb-3'>
-                                    <button
-                                        type='button'
-                                        onClick={() => {
-                                            this.setState(prevState => ({
-                                                displaySocialInputs: !prevState.displaySocialInputs
-                                            }))
-                                        }} className='btn btn-light'>Add Social Network links</button>
-                                    <span className='text-muted'>Optional</span>
-                                </div>
-                                {socialInputs} */}
                                 <input type='submit' value='Submit' className='btn btn-info btn-block mt-4' />
                             </form>
                         </div>

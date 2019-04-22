@@ -51,25 +51,6 @@ export const getPosts = postData => dispatch => {
     );
 };
 
-// Get Post
-// export const getPost = id => dispatch => {
-//   dispatch(setPostLoading());
-//   axios
-//     .get(`https://floating-fjord-69030.herokuapp.com/api/posts/${id}`)
-//     .then(res =>
-//       dispatch({
-//         type: GET_POST,
-//         payload: res.data
-//       })
-//     )
-//     .catch(err =>
-//       dispatch({
-//         type: GET_POST,
-//         payload: null
-//       })
-//     );
-// };
-
 // Delete Post
 export const deletePost = id => dispatch => {
   axios
@@ -168,6 +149,7 @@ export const clearErrors = () => {
 export const updatePost = post => async dispatch => {
   const res = await axios.put(`${baseUrl}/posts/${post.id}`, post);
   console.log(post.id);
+  
   dispatch({
     type: UPDATE_POST,
     payload: res.data

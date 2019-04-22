@@ -73,7 +73,7 @@ class PostForm extends Component {
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-info text-white">Share A Testimony</div>
+          <div className='card' style={{background: '#4267B2', color: 'white', textAlign: 'center', fontSize: '1.5em'}}>Share A Testimony</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
@@ -101,7 +101,7 @@ class PostForm extends Component {
                   error={errors.story}
                 />
               </div>
-              <button type="submit" className="btn btn-dark">
+              <button type="submit" className="btn btn-dark" style={{background: '#5C5D5F', color: 'white'}}>
                 Submit
               </button>
             </form>

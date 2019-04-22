@@ -73,8 +73,7 @@ class Signup extends Component {
 
   render() {
     const { errors } = this.state;
-    // const { from } = this.props.location.state || '/Login'
-    // const { fireRedirect } = this.state
+    
     return (
       <div className="landing">
         <div className="dark-overlay landing-inner text-light">
