@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import { deletePost, addLike, removeLike } from '../../actions/postActions';
 
@@ -18,15 +17,6 @@ class PostItem extends Component {
     this.props.removeLike(id);
   }
 
-//  findUserLike(likes) {
-//     const { auth } = this.props;
-//     if (likes.filter(like => like.user === auth.user.id).length > 0) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }
-
   render() {
     const { post, auth, showActions } = this.props;
     console.log(post);
@@ -36,54 +26,40 @@ class PostItem extends Component {
           <div className="col-md-2">
             <a href="profile.html">
               <img
-                className="avatar-feed" src = {require('../Img/avatar.jpg')}
+                className="avatar-feed" src={require('../Img/avatar.jpg')}
                 alt="Avatar"
               />
             </a>
             <br />
           </div>
-            <p className="text-center">Author: {post.author}</p>
+          <p className="text-center">Author: {post.author}</p>
           <div className="col-md-10">
             <h1 className="lead">{post.title}</h1><hr />
             <p className="lead">{post.story}</p>
             {showActions ? (
               <span>
-                <button
-                  onClick={this.onLikeClick.bind(this, post._id)}
+                <button onClick={this.onLikeClick.bind(this, post._id)}
                   type="button"
-                  className="btn btn-light mr-1"
-                >
-                  <i
-                    className={classnames('fas fa-thumbs-up', {
-                      // 'text-info': this.findUserLike(post.likes)
-                    })}
-                  />
+                  className="btn btn-light mr-1" style={{background: '#4267B2'}}>
+                  <i className={('fas fa-thumbs-up')}  />
                   <span className="badge badge-light"></span>
                 </button>
-              <Link to={`/editpost/${post._id}`}>
-            <i
-              className="fas fa-pencil-alt"
-              style={{
-                cursor: 'pointer',
-                float: 'right',
-                color: 'black',
-                marginRight: '1rem'
-              }}
-            />
-          </Link>
-                <Link to={`/editpost/${post._id}`} className="btn btn-info mr-1">
-                  Comments
+                
+                <Link to={`/editpost/${post._id}`}>
+                  <i className="fas fa-pencil-alt" style={{ cursor: 'pointer', float: 'right', color: 'black', marginRight: '1rem' }} />
                 </Link>
+
+                <Link to={`/editpost/${post._id}`} className="btn btn-info mr-1" style={{ background: '#5C5D5F' }}>
+                  Comment
+                </Link>
+
                 {post.user === auth.user.id ? (
-                  <button
-                    onClick={this.onDeleteClick.bind(this, post._id)}
+                  <button onClick={this.onDeleteClick.bind(this, post._id)}
                     type="button"
-                    className="btn btn-danger mr-1"
-                  >
-                  
+                    className="btn btn-danger mr-1" style={{ background: '#980F06' }}>
                     <i className="fas fa-times" />
                   </button>
-                  
+
 
 
                 ) : null}

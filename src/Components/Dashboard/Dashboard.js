@@ -42,27 +42,6 @@ class Dashboard extends Component {
           </div >
         );
       }
-      // //check if logged in user has profile data
-      // if (Object.keys(profile).length > 0) {
-      //   console.log('im here');
-      //   dashboardContent = (
-      //     <div>
-      //       <p className='lead text-muted'>
-      //         Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
-      //       </p>
-      //       {/* <div style={{ marginBottom: '60px' }} />
-      //       <button onClick={this.onDeleteClickbind(this)} className='btn btn-danger'>Delete my account</button>
-      //       profileActions is supposed to go here */}
-      //     </div>
-      //   )
-      // } else {
-      //   console.log('kidding im here');
-
-      //   //User is logged in but has no profile
-
-      // }
-      //}
-
       return (
         <div className='dashboard'>
           <div className='container'>

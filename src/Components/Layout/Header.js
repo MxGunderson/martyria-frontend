@@ -27,7 +27,7 @@ class Header extends Component {
           <NavItem href='/contact'>Contact</NavItem>
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/feed'>Post Feed</NavItem>
-          <NavItem href='/dashboard'>Dashboard</NavItem>
+          {/* <NavItem href='/dashboard'>Dashboard</NavItem> */}
           <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
           {/* <NavItem href='/'><Icon>refresh</Icon></NavItem> */}
 

@@ -47,9 +47,7 @@ export default function(state = initialState, action) {
         ...state,
         posts: state.posts.map(
           post =>
-            post.id === action.payload.id
-              ? (post = action.payload)
-              : post)
+            post.id === action.payload.id ? (post = action.payload) : post)
       };
     default:
       return state;

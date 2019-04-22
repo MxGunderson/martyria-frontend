@@ -11,17 +11,17 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h3 className="display-3 mb-4">Welcome To Martyria</h3>
-                <p className="lead">
+                <h3 className="display-3 mb-4" style={{color: '#EFEDE1'}}>Welcome To Martyria</h3>
+                <p className="lead" style={{color: '#EFEDE1'}}>
                   {' '}
                   Create a profile to share testimonies
                   and be encouraged in the goodness of God!
                 </p>
                 <hr />
-                <Link to="/signup" className="btn btn-lg btn-info mr-2">
+                <Link to="/signup" className="btn btn-lg btn-info mr-2" style={{background: '#EFEDE1', color: 'black'}}>
                   Sign Up
                 </Link>
-                <Link to="/login" className="btn btn-lg btn-light">
+                <Link to="/login" className="btn btn-lg btn-light" style={{background: '#EFEDE1', color: 'black'}}>
                   Login
                 </Link>
               </div>
