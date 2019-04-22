@@ -51,23 +51,6 @@ export const getPosts = postData => dispatch => {
     );
 };
 
-// Delete Post
-export const deletePost = id => dispatch => {
-  axios
-    .delete(`${baseUrl}/posts/${id}`)
-    .then(res =>
-      dispatch({
-        type: DELETE_POST,
-        payload: id
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
-};
 
 // Add Like
 export const addLike = id => dispatch => {
@@ -85,7 +68,7 @@ export const addLike = id => dispatch => {
 // Remove Like
 export const removeLike = (id, postData) => dispatch => {
   axios
-    .post(`${baseUrl}posts/unlike/${id}`, postData)
+    .post(`${baseUrl}/posts/unlike/${id}`, postData)
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
@@ -99,7 +82,7 @@ export const removeLike = (id, postData) => dispatch => {
 export const addComment = (postId, commentData) => dispatch => {
   dispatch(clearErrors());
   axios
-    .post(`${baseUrl}/api/posts/comment/${postId}`, commentData)
+    .post(`${baseUrl}/posts/comment/${postId}`, commentData)
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -117,7 +100,7 @@ export const addComment = (postId, commentData) => dispatch => {
 // Delete Comment
 export const deleteComment = (postId, commentId) => dispatch => {
   axios
-    .delete(`${baseUrl}posts/comment/${postId}/${commentId}`)
+    .delete(`${baseUrl}/posts/comment/${postId}/${commentId}`)
     .then(res =>
       dispatch({
         type: GET_POST,
@@ -146,21 +129,41 @@ export const clearErrors = () => {
   };
 };
 
-export const updatePost = post => async dispatch => {
-  const res = await axios.put(`${baseUrl}/posts/${post.id}`, post);
-  console.log(post.id);
-  
-  dispatch({
-    type: UPDATE_POST,
-    payload: res.data
-  });
-};
 
-// Get Post
+// Get Post Text To Update Form For Editing!
 export const getPost = id => async dispatch => {
   const res = await axios.get(`${baseUrl}/posts/${id}`);
   dispatch({
     type: GET_POST,
     payload: res.data
   });
+};
+
+
+// This Needs Help!
+// Updating post by id
+export const updatePost = (post, id) => async dispatch => {
+  const res = await axios.put(`${baseUrl}/posts/${id}`, post);
+  dispatch({
+    type: UPDATE_POST,
+    payload: res.data
+  });
+};
+
+// Delete Post
+export const deletePost = id => dispatch => {
+  axios
+    .delete(`${baseUrl}/posts/${id}`)
+    .then(res =>
+      dispatch({
+        type: DELETE_POST,
+        payload: id
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
 };

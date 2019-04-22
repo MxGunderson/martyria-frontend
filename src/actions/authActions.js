@@ -12,7 +12,7 @@ const baseUrl = process.env.REACT_APP_BASE_URL;
 export const signupUser = (userData, history) => dispatch => {
   axios
     .post(`${baseUrl}/users/signup`, userData)
-    .then(res => history.push("/dashboard"))
+    .then(res => history.push("/login"))
     .catch(err =>
       dispatch({
         type: GET_ERRORS,

@@ -6,6 +6,7 @@ import { deletePost, addLike, removeLike } from '../../actions/postActions';
 
 class PostItem extends Component {
   onDeleteClick(id) {
+    console.log('hitting ID even as reg user', id)
     this.props.deletePost(id);
   }
 

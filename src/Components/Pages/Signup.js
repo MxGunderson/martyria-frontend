@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-// import { Redirect } from 'react-router';
 import TextFieldGroup from '../common/TextFieldGroup'
 import 'react-materialize';
 import { connect } from 'react-redux';
 import { signupUser } from '../../actions/authActions'
-// import classnames from 'classnames';
+
 
 
 class Signup extends Component {
@@ -24,7 +23,7 @@ class Signup extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/dashboard')
+      this.props.history.push('/feed')
     }
   }
 
@@ -108,9 +107,6 @@ class Signup extends Component {
                       error={errors.password}
                     />
                     <input type="submit" style={{background: '#EFEDE1', color: 'black'}} className="btn btn-info btn-block mt-4" />
-                    {/* {fireRedirect && (
-                <Redirect to={from || '/Login'} />
-              )} */}
                   </form>
                 </div>
               </div>

@@ -54,14 +54,12 @@ class EditPost extends Component {
 
 
     const updatePost = {
-      id,
       story,
       title,
       author
-
     };
 
-    this.props.updatePost(updatePost);
+    this.props.updatePost(updatePost, id);
 
     //Clear State
     this.setState({
