@@ -44,10 +44,7 @@
 
     background-size: cover;
     height: 100vh;
-
-    
-  }  
-
+  }
 
   .dark-overlay {
     background-color: rgba(0, 0, 0, 0.7);
@@ -92,7 +89,6 @@
     align-content: center;
   }
 
-
   .Matt {
     height: 300px;
     width: 300px;
@@ -131,19 +127,15 @@
     text-align: center;
   }
 }
-footer {
+
+
+Footer {
   position: fixed;
-  left: 0;
+  margin-left: 0;
+  right: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
-}
 
 }
-  Footer {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      
-  }
+
