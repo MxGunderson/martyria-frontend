@@ -23,10 +23,9 @@ class Header extends Component {
       <div className="container-header">
         <div className="header">
 
-          <NavItem href='/home'>Home</NavItem>
-          <NavItem href='/contact'>Contact</NavItem>
+          <NavItem href='/contact'>Meet The Team</NavItem>
           <NavItem href='/about'>About</NavItem>
-          <NavItem href='/feed'>Post Feed</NavItem>
+          <NavItem href='/feed'>Testimonies</NavItem>
           {/* <NavItem href='/dashboard'>Dashboard</NavItem> */}
           <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
           {/* <NavItem href='/'><Icon>refresh</Icon></NavItem> */}
@@ -41,7 +40,7 @@ class Header extends Component {
           {/* <NavItem href='/'><Icon>search</Icon></NavItem> */}
           <NavItem href='/home' >Home</NavItem>
           <NavItem href='/about'>About</NavItem>
-          <NavItem href='/contact'>Contact</NavItem>
+          <NavItem href='/contact'>Meet The Team</NavItem>
           <NavItem href='/login'>Login</NavItem>
           <NavItem href='/signup'>Signup</NavItem>
           {/* <NavItem href='/feed'><Icon>refresh</Icon></NavItem> */}

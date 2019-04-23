@@ -14,7 +14,7 @@ class Landing extends Component {
                 <h3 className="display-3 mb-4" style={{color: '#EFEDE1'}}>Welcome To Martyria</h3>
                 <p className="lead" style={{color: '#EFEDE1'}}>
                   {' '}
-                  Create a profile to share testimonies
+                  Signup to share testimonies
                   and be encouraged in the goodness of God!
                 </p>
                 <hr />

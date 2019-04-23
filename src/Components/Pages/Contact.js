@@ -16,14 +16,14 @@ class Contact extends Component {
                       <h3>Cameron LaVallie</h3>
                       < img className="Cam" src={require('../Img/cam.jpg')} alt="Cam" />
                       <p className="dev-info">
-                        Location: Fortworth, TX
+                        Location: Fort Worth, TX
                         <br />
                         Favorite Food: Surf and Turf
                         <br />
                         Whats next? - Looking to make a positive impact in the world and industry as a developer.
                       </p>
+                      <a href="https://www.linkedin.com/in/cameron-lavallie-53b5239a/" target="_blank" >More about Cameron</a>
 
-                      <p />
                     </div>
                     <div className="col-md-6">
                       <h3>Matthew Gunderson</h3>
@@ -33,8 +33,10 @@ class Contact extends Component {
                         <br />
                         Favorite Food: Old fashion burger and fries
                           <br />
-                        Whats next? - I am excited for the future in starting my new career in web developing and making an impact in the industry.
+                        Whats next? I am excited for the future in starting my new career in web developing and making an impact in the industry.
                       </p>
+                      <a href="https://www.linkedin.com/in/matthew-gunderson-60bb55145/" target="_blank">More about Matt</a>
+          
                     </div>
                     <br />
                     <div className="col-md-6">
@@ -45,8 +47,10 @@ class Contact extends Component {
                         <br />
                         Favorite Food: Apples and peanut butter!
                           <br />
-                        Whats next? -
+                        Whats next ? Working on furthering education with web security to aid investigators in tracking sex traffickers.
                       </p>
+                      <a href="https://www.linkedin.com/in/mmuse191/" rel="_blank">More about Morgan</a>
+                      
                     </div>
                     <div className="col-md-6">
                       <h3>Paul Rase</h3>
@@ -54,10 +58,12 @@ class Contact extends Component {
                       <p className="dev-info">
                         Location: Omaha, NE
                         <br />
-                        Favorite Food:
+                        Favorite Food: New York-style pizza 
                           <br />
-                        Whats next?
+                        Whats next? Full-Stack Development Full-Time
                       </p>
+                      <a href="https://www.linkedin.com/in/paul-rase-000b7b171/" target="_blank">More about Paul</a>
+                      
                     </div>
                   </div>
                 </div>

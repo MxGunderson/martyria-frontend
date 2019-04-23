@@ -28,7 +28,7 @@
     background-position: center;
     height: 250vh;
     margin-top: 0px;
-    margin-bottom: -50px;
+    /* margin-bottom: -50px; */
   }
 
   .landing-inner {
@@ -134,8 +134,18 @@ Footer {
   margin-left: 0;
   right: 0;
   bottom: 0;
+  padding-bottom: 20px;
   width: 100%;
   text-align: center;
 
 }
 
+.grid-container {
+  text-align: center;
+  margin-right: 30px;
+}
+
+.about-header {
+  text-align: center;
+  margin-right: 30px;
+}
