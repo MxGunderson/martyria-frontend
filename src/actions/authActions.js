@@ -39,12 +39,12 @@ export const loginUser = userData => dispatch => {
       // SET CURRENT USER
       dispatch(setCurrentUser(decoded));
     })
-    // .catch(err =>
-    //   dispatch({
-    //     type: GET_ERRORS,
-    //     payload: err.res.data
-    //   })
-    // );
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.res.data
+      })
+    );
 };
 
 // set logged in user
