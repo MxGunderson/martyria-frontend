@@ -3,8 +3,6 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 
-// import {GET_ERRORS, SET_CURRENT_USER} from './types';
-
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
 // signup user

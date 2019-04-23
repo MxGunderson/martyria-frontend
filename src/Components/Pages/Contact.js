@@ -22,7 +22,7 @@ class Contact extends Component {
                         <br />
                         Whats next? - Looking to make a positive impact in the world and industry as a developer.
                       </p>
-                      <a href="https://www.linkedin.com/in/cameron-lavallie-53b5239a/" target="_blank" >More about Cameron</a>
+                      <a rel="noopener noreferrer"  href="https://www.linkedin.com/in/cameron-lavallie-53b5239a/" target="_blank" >More about Cameron</a>
 
                     </div>
                     <div className="col-md-6">
@@ -35,7 +35,7 @@ class Contact extends Component {
                           <br />
                         Whats next? I am excited for the future in starting my new career in web developing and making an impact in the industry.
                       </p>
-                      <a href="https://www.linkedin.com/in/matthew-gunderson-60bb55145/" target="_blank">More about Matt</a>
+                      <a rel="noopener noreferrer" href="https://www.linkedin.com/in/matthew-gunderson-60bb55145/" target="_blank">More about Matt</a>
           
                     </div>
                     <br />
@@ -49,7 +49,8 @@ class Contact extends Component {
                           <br />
                         Whats next ? Working on furthering education with web security to aid investigators in tracking sex traffickers.
                       </p>
-                      <a href="https://www.linkedin.com/in/mmuse191/" rel="_blank">More about Morgan</a>
+                      <a href="https://www.linkedin.com/in/mmuse191/" rel="noopener noreferrer"
+                      target="_blank">More about Morgan</a>
                       
                     </div>
                     <div className="col-md-6">
@@ -62,7 +63,7 @@ class Contact extends Component {
                           <br />
                         Whats next? Full-Stack Development Full-Time
                       </p>
-                      <a href="https://www.linkedin.com/in/paul-rase-000b7b171/" target="_blank">More about Paul</a>
+                      <a rel="noopener noreferrer" href="https://www.linkedin.com/in/paul-rase-000b7b171/" target="_blank">More about Paul</a>
                       
                     </div>
                   </div>
