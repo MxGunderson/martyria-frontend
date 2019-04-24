@@ -13,6 +13,11 @@ const initialState = {
   loading: false
 };
 
+/**
+ * This is reducing action requests and setting/sending action requests from the state
+ * @param {object} state 
+ * @param {type action} action 
+ */
 export default function(state = initialState, action) {
   switch (action.type) {
     case POST_LOADING:

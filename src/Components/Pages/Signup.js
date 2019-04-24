@@ -66,7 +66,6 @@ class Signup extends Component {
       password: this.state.password
     };
     this.props.signupUser(newUser, this.props.history);
-    console.log(this.state)
 
   }
 

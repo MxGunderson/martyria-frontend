@@ -11,7 +11,11 @@ import {
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
-// Get current profile
+
+/**
+ * Get current signed in user by id
+ * @param {object} userData 
+ */
 export const getCurrentProfile = userData => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -30,7 +34,7 @@ export const getCurrentProfile = userData => dispatch => {
     );
 };
 
-// Get profile by handle
+// Get profile by handle by profile id 
 export const getProfileByHandle = () => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -49,7 +53,12 @@ export const getProfileByHandle = () => dispatch => {
     );
 };
 
-//Create info FOR the Profile
+
+/**
+ * Create personal info FOR the Profile
+ * @param {object} profileData 
+ * @param {func} history 
+ */
 export const createInfo = (profileData, history) => dispatch => {
   axios
     .post(`${baseUrl}/profiles`, profileData)
@@ -64,7 +73,10 @@ export const createInfo = (profileData, history) => dispatch => {
 
 
 
-// Delete Experience
+/**
+ * Delete experiences in create profile 
+ * @param {string} id 
+ */
 export const deleteExperience = id => dispatch => {
   axios
     .delete(`${baseUrl}/profile/experience/${id}`)
@@ -83,7 +95,8 @@ export const deleteExperience = id => dispatch => {
 };
 
 
-// Get all profiles
+// Get all profiles to view and connect with other users
+
 export const getProfiles = () => dispatch => {
   dispatch(setProfileLoading());
   axios
@@ -103,6 +116,7 @@ export const getProfiles = () => dispatch => {
 };
 
 // Delete account & profile
+
 export const deleteAccount = () => dispatch => {
   if (window.confirm("Are you sure? This can NOT be undone!")) {
     axios

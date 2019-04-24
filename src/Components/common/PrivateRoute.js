@@ -3,6 +3,11 @@ import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+/**
+ * This is authenticating thata user in fact signed up and is pushing them if authenticated to login page to login with info they provided in signup 
+ * 
+ * @param {component} component 
+ */
 const PrivateRoute = ({ component: Component, auth, ...rest }) => (
     <Route
         {...rest}

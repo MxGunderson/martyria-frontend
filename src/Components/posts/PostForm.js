@@ -60,7 +60,6 @@ class PostForm extends Component {
       title: '',
       author: ''
     });
-    console.log(newPost);
   }
 
   onChange(e) {

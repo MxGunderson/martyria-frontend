@@ -6,13 +6,11 @@ import { deletePost, addLike, removeLike } from '../../actions/postActions';
 
 class PostItem extends Component {
   onDeleteClick(id) {
-    console.log('hitting ID even as reg user', id)
     this.props.deletePost(id);
   }
 
   render() {
     const { post, auth, showActions } = this.props;
-    console.log(post);
     return (
       <div className="card card-body mb-3">
         {post && <div className="row">
@@ -33,13 +31,24 @@ class PostItem extends Component {
               <span>
   
                 <Link to={`/editpost/${post._id}`}>
-                  <i className="fas fa-pencil-alt" style={{ cursor: 'pointer', float: 'left', color: 'black', marginRight: '1rem', marginTop: '1rem' }} />
+                  <i className="fas fa-pencil-alt" 
+                  style={{ 
+                    cursor: 'pointer', 
+                    float: 'left', 
+                    color: 'black', 
+                    marginRight: '1rem', 
+                    marginTop: '1rem' 
+                    }} />
                 </Link>
 
                 {post.user === auth.user.id ? (
                   <button onClick={this.onDeleteClick.bind(this, post._id)}
                     type="button"
-                    className="btn btn-danger mr-1" style={{ background: '#980F06', float: 'right' }}>
+                    className="btn btn-danger mr-1" 
+                    style={{ 
+                      background: '#980F06', 
+                      float: 'right' 
+                      }}>
                     <i className="fas fa-times" />
                   </button>
 

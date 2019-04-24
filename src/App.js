@@ -13,7 +13,6 @@ import PrivateRoute from './Components/common/PrivateRoute';
 import Landing from './Components/Pages/Landing';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
-import Home from './Components/Pages/Home';
 import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
 import Login from './Components/Pages/Login';
@@ -63,7 +62,6 @@ class App extends Component {
           <div className="App">
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/home" component={Home} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
             <Route path='/login' component={Login} />

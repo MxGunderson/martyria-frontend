@@ -6,7 +6,11 @@ import jwt_decode from "jwt-decode";
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
 // signup user
-
+/**
+ * 
+ * @param {Posting User Data} userData 
+ * @param {go to the appropriate response page} history 
+ */
 export const signupUser = (userData, history) => dispatch => {
   axios
     .post(`${baseUrl}/users/signup`, userData)
@@ -19,8 +23,10 @@ export const signupUser = (userData, history) => dispatch => {
     );
 };
 
-// LOGIN USER GET USER TOKEN
-
+/**
+ * 
+ * @param {Grabbing User Data and setting token} userData 
+ */
 export const loginUser = userData => dispatch => {
   axios
     .post(`${baseUrl}/auth`, userData)
@@ -45,7 +51,11 @@ export const loginUser = userData => dispatch => {
     );
 };
 
-// set logged in user
+
+/**
+ * 
+ * @param {func to log in user} decoded 
+ */
 export const setCurrentUser = decoded => {
   return {
     type: SET_CURRENT_USER,
@@ -53,7 +63,9 @@ export const setCurrentUser = decoded => {
   };
 };
 
-// log user out
+/**
+ * @param {logging out user session} dispatch
+ */
 export const logoutUser = () => dispatch => {
   // remove token from local storage
   localStorage.removeItem("jwtToken");
