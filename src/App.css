@@ -8,11 +8,9 @@
 
   .container {
     width: 100%;
+    margin-bottom: 60px;
   }
 
-  nav {
-    background-color: black;
-  }
   .profile-text {
     margin-top: 2em;
   }
@@ -126,28 +124,44 @@
     margin-left: 20px;
     text-align: center;
   }
-}
-
-
-Footer {
   
-  position: fixed;
-  margin-left: 0;
-  margin-bottom: -20px;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+  
+  Footer {
+    position: fixed;
+    margin-left: 0;
+    margin-bottom: 0px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .grid-container {
+    text-align: center;
+    margin-right: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .about-header {
+    text-align: center;
+    margin-right: 30px;
+  }
+  
+  .contact-header {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    padding-right: 30px;
+  }
+  
+  .landing-header {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    padding-right: 30px;
+  }
+  
+  .logout {
+    color: rgb(182, 176, 144)
+  }
 }
-
-.grid-container {
-  text-align: center;
-  margin-right: 30px;
-}
-
-.about-header {
-  text-align: center;
-  margin-right: 30px;
-}
-
-

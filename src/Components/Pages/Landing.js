@@ -11,6 +11,7 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
+              <div className="landing-header">
                 <h3 className="display-3 mb-4" style={{color: '#EFEDE1'}}>Welcome To Martyria</h3>
                 <p className="lead" style={{color: '#EFEDE1'}}>
                  
@@ -24,6 +25,7 @@ class Landing extends Component {
                 <Link to="/login" className="btn btn-lg btn-light" style={{background: '#EFEDE1', color: 'black'}}>
                   Login
                 </Link>
+              </div>
               </div>
             <div className="front-testimony" 
             style={{ marginTop: '30px', 
@@ -55,18 +57,21 @@ class Landing extends Component {
             </div>
             </div>
             <div className="front-testimony" 
-            style={{ marginLeft: 'auto', 
+            style={{ 
+            marginLeft: 'auto', 
             marginRight: 'auto', 
+            marginBottom: '60px',
             marginTop: '10px', 
             alignContent: 'center', 
             background: 'white', 
             opacity: .5, 
             width: '800px'
             }}>  
-          <p className="text-center" style={{ color: 'black'}}>Author: Jevens</p>
+          <p className="text-center" style={{ color: 'black'}}>Author: Alyssa Hughey</p>
           <div className="col-md-10">
             <h1 className="lead" style={{ color: 'black'}}>My encouragement for you!</h1><hr />
-            <p className = "lead" style={{ color: 'black'}}>God is near to us, and in His joyous heart we get new strength. Praying for each one of you to see radical blessings and increase of breakthrough come into your life. We all belong to God's family, which means we belong to each other.</p>
+            <p className = "lead" 
+            style={{ color: 'black'}}>God is near to us, and in His joyous heart we get new strength. Praying for each one of you to see radical blessings and increase of breakthrough come into your life. We all belong to God's family, which means we belong to each other.</p>
             </div>
             </div>
             </div>

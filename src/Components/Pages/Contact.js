@@ -9,8 +9,11 @@ class Contact extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-md-12 text-center">
-                  <h3 className="display-3 mb-4">The team behind Martyria</h3>
-                  <p className="lead"> Record, Report, Testimony, Witness!</p>
+                  <div className="contact-header">
+                    <h3 className="display-3 mb-4">The team behind Martyria</h3>
+                    <p className="lead"> Record, Report, Testimony, Witness!</p>
+                  </div>
+                  </div>
                   <div className="grid-container">
                     <div className="col-md-6">
                       <h3>Cameron LaVallie</h3>
@@ -22,7 +25,7 @@ class Contact extends Component {
                         <br />
                         Whats next? - Looking to make a positive impact in the world and industry as a developer.
                       </p>
-                      <a rel="noopener noreferrer"  href="https://www.linkedin.com/in/cameron-lavallie-53b5239a/" target="_blank" >More about Cameron</a>
+                      <a rel="noopener noreferrer"      href="https://www.linkedin.com/in/cameron-lavallie-53b5239a/"   target="_blank" >More about Cameron</a>
 
                     </div>
                     <div className="col-md-6">
@@ -72,7 +75,6 @@ class Contact extends Component {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }

@@ -26,9 +26,10 @@ class Header extends Component {
           <NavItem href='/contact'>Meet The Team</NavItem>
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/feed'>Testimonies</NavItem>
-          {/* <NavItem href='/dashboard'>Dashboard</NavItem> */}
-          <NavItem className="logout" href='#' onClick={this.onLogoutClick.bind(this)}>Logout</NavItem>
-          {/* <NavItem href='/'><Icon>refresh</Icon></NavItem> */}
+          <NavItem className="logout" 
+          href='/' 
+          onClick={this.onLogoutClick.bind(this)} >Logout</NavItem>
+
 
         </div>
       </div>
@@ -37,13 +38,11 @@ class Header extends Component {
     const guestLinks = (
       <div>
         <div className="header">
-          {/* <NavItem href='/'><Icon>search</Icon></NavItem> */}
           <NavItem href='/' >Home</NavItem>
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/contact'>Meet The Team</NavItem>
           <NavItem href='/login'>Login</NavItem>
           <NavItem href='/signup'>Signup</NavItem>
-          {/* <NavItem href='/feed'><Icon>refresh</Icon></NavItem> */}
         </div>
       </div>
     );
