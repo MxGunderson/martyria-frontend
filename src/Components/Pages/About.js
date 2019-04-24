@@ -21,13 +21,21 @@ class About extends Component {
                     
                     <p>“Then I heard a triumphant voice in heaven proclaiming: “Now salvation and power are set in place, and the kingdom reign of our God and the ruling authority of his Anointed One are established. For the accuser of our brothers and sisters, who relentlessly accused them day and night before our God, has now been defeated —cast out once and for all! They conquered him completely through the blood of the Lamb and the powerful word of his testimony. They triumphed because they did not love and cling to their own lives, even when faced with death.” Revelation‬ ‭12:10-11‬</p>
                       <br />
-                    <p>Martyria was created by believers for believers. We honor God by trusting in faith that He has sent us to share His good news. Here, sons and daughters are able to share what's going on their lives and encourage others with testimonies, scripture, and over building up in faith. We are called to love, encourage, and worship our creator. Join us as we celebrate all that He does for us.  </p>
+                    <p>Martyria was created by believers for believers. We honor God by trusting in faith that He has sent us to share His good news! He is our provider, our healer, our peace. He is to us everything! Here,sons and daughters are able to share what's going on in their lives and lift each other up with testimonies, scripture, and building up in faith. We are called to love, encourage, and worship our creator. Join us as we celebrate all that He does for us and be encouraged; He is alive, He is good and He cares for you!</p>
                     <br />
-                    <h4> 
-                      For I am only a fellow servant with you and one of your brothers and sisters who cling to what Jesus testifies.Worship God.The testimony of Jesus is the spirit of prophecy.<br/>
+                    <h5> 
+                      "For I am only a fellow servant with you and one of your brothers and sisters who cling to what Jesus testifies. Worship God. The testimony of Jesus is the spirit of prophecy."<br/>
 
-                      Revelation 19: 10
-                    </h4>
+                      Revelation 19:10
+                      </h5>
+
+                      <h5 className="james">
+
+                      "Every gift God freely gives us is good and perfect, streaming down from the Father of lights, who shines from the heavens with no hidden shadow or darkness and is never subject to change."<br/>
+
+                      James 1:17
+
+                    </h5>
 
                   </div>
                 </div>
