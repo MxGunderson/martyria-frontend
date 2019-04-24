@@ -65,7 +65,7 @@ class Landing extends Component {
             }}>  
           <p className="text-center" style={{ color: 'black'}}>Author: Jevens</p>
           <div className="col-md-10">
-            <h1 className="lead" style={{ color: 'black'}}>eading coworkers to Jesus!</h1><hr />
+            <h1 className="lead" style={{ color: 'black'}}>My encouragement for you!</h1><hr />
             <p className = "lead" style={{ color: 'black'}}>God is near to us, and in His joyous heart we get new strength. Praying for each one of you to see radical blessings and increase of breakthrough come into your life. We all belong to God's family, which means we belong to each other.</p>
             </div>
             </div>
