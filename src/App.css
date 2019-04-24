@@ -164,4 +164,22 @@
   .logout {
     color: rgb(182, 176, 144)
   }
+
+  .login {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-right: 20px;
+    padding-right: 20px;
+  
+  }
+
+  .register {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-right: 20px;
+    padding-right: 20px;
+  }
+
 }
