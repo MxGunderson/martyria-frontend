@@ -15,6 +15,3 @@ Enter your API as `REACT_APP_BASE_URL = 'https://yourApiAddressHere.com/api'`
 
 Run `npm start` <br>
 App will open in the browser at [http://localhost:3000](http://localhost:3000)
-
-
-#change me again
