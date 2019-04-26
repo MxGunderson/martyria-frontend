@@ -196,11 +196,13 @@
    display: block;
    max-width: 100%;
    height: 100% !important;
+   margin-bottom: 0;
+
  }
  .carousel-container{
    margin-top: 80px;
  }
- .carousel-indicators {
+ .carousel-indicators  {
    align-content: center;
    padding-left: 60px;
  }

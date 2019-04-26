@@ -28,38 +28,38 @@ class Landing extends Component {
               </div>            
               </div>
 
-<div class="carousel-container">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div className="carousel-container">
+  <div id="myCarousel" className="carousel slide" data-ride="carousel">
 
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <ol className="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
 
-    <div class="carousel-inner">
+    <div className="carousel-inner">
 
-      <div class="item active">
+      <div className="item active">
         <img src={require('../Img/lights.png')} alt="Cam" style={{ width: "100%;"}}/>
-        < div class = "carousel-caption" >
+        < div className = "carousel-caption" >
           <h5>Anonymous User</h5>
           <p> "God is near to us, and in His joyous heart we get new strength.Praying
           for each one of you to see radical blessings and increase of breakthrough come into your life.We all belong to God 's family, which means we belong to each other."</p>
         </div>
       </div>
 
-      <div class="item">
+      <div className="item">
         <img src={require('../Img/lights.png')} alt="Chicago" style={{ width: "100%;"}}/>
-        <div class="carousel-caption">
+        <div className="carousel-caption">
           <h5>Anonymous User</h5>
-          <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led.. the Lord put a specific time in our hearts and sure enough we got pregnant with our son that very week...."</p>
+          <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led.. the Lord put a specific time in our hearts and sure enough we got pregnant with our son that very week...."</p><br/>
         </div>
       </div>
     
-      <div class="item">
+      <div className="item">
         <img src={require('../Img/lights.png')} alt="New York" style={{ width: "100%;"}}/>
-        <div class="carousel-caption">
+        <div className="carousel-caption">
           <h5>Anonymous User</h5>
           < p > I recently got my first gig doing web development!Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify.Although very basic, I 'm getting paid AND I can use it in my portfolio later on. God is always looking to give us opportunities, be expectant!</p>
         </div>
@@ -68,13 +68,13 @@ class Landing extends Component {
     </div>
 
 
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
+    <a className="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span className="glyphicon glyphicon-chevron-left"></span>
+      <span className="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
+    <a className="right carousel-control" href="#myCarousel" data-slide="next">
+      <span className="glyphicon glyphicon-chevron-right"></span>
+      <span className="sr-only">Next</span>
     </a>
   </div>
 </div>
