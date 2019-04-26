@@ -53,7 +53,7 @@ class Landing extends Component {
         <img src={require('../Img/lights.png')} alt="Chicago" style={{ width: "100%;"}}/>
         <div className="carousel-caption">
           <h5>Anonymous User</h5>
-          <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led.. the Lord put a specific time in our hearts and sure enough we got pregnant with our son that very week...."</p><br/>
+          <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led..."</p><br/>
         </div>
       </div>
     
@@ -61,7 +61,7 @@ class Landing extends Component {
         <img src={require('../Img/lights.png')} alt="New York" style={{ width: "100%;"}}/>
         <div className="carousel-caption">
           <h5>Anonymous User</h5>
-          < p > I recently got my first gig doing web development!Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify.Although very basic, I 'm getting paid AND I can use it in my portfolio later on. God is always looking to give us opportunities, be expectant!</p>
+          <p> "I recently got my first gig doing web development!Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify.Although very basic, I 'm getting paid AND I can use it in my portfolio later on..."</p>
         </div>
       </div>
   
