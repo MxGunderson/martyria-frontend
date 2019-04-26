@@ -53,7 +53,7 @@ class Landing extends Component {
         <img src={require('../Img/lights.png')} alt="Chicago" style={{ width: "100%;"}}/>
         <div class="carousel-caption">
           <h5>Anonymous User</h5>
-          <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led.. the Lord put a specific time in our hearts and sure enough we got pregnant with our son that very week. In two weeks from now he turns 5 years old and is such a gift to our family. Since then we’ve had two other beautiful children and we look forward to more if God wills it. He is our healer! He is faithful; He keeps His promises!"</p>
+          <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led.. the Lord put a specific time in our hearts and sure enough we got pregnant with our son that very week...."</p>
         </div>
       </div>
     
