@@ -25,55 +25,59 @@ class Landing extends Component {
                 <Link to="/login" className="btn btn-lg btn-light" style={{background: '#EFEDE1', color: 'black'}}>
                   Login
                 </Link>
+              </div>            
               </div>
-              </div>
-            <div className="front-testimony" 
-            style={{ marginTop: '30px', 
-            marginLeft: 'auto', 
-            marginRight: 'auto', 
-            background: 'white', 
-            opacity: .5, 
-            width: '800px'
-            }}> 
-              <p className="text-center" style={{ color: 'black'}}>Author: Branden Kennedy</p>
-          <div className="col-md-10">
-            <h1 className="lead" style={{ color: 'black'}}>My First Web Job</h1><hr />
-            < p className = "lead" style={{ color: 'black'}}> I recently got my first gig doing web development!Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify.Although very basic, I 'm getting paid AND I can use it in my portfolio later on. God is always looking to give us opportunities, be expectant!</p><br/>
-            </div>
-            </div>
-          <div className="front-testimony" 
-          style={{ marginLeft: 'auto',
-           marginRight: 'auto', 
-           marginTop: '10px', 
-           alignContent: 'center', 
-           background: 'white', 
-           opacity: .5, 
-           width: '800px'
-           }}>  
-          <p className="text-center" style={{ color: 'black'}}>Author: Jevens</p>
-          <div className="col-md-10">
-            <h1 className="lead" style={{ color: 'black'}}>Leading coworkers to Jesus!</h1><hr />
-            <p className = "lead" style={{ color: 'black'}}>Just got to have my first deep convo with a coworker whose been struggling and is feeling far from God. It was awesome. I was thinking about giving her a book to read on vacation about identity and women stuff that was not preachy since she admits to being “away from god” and “in shame” and dealing with some old trauma she doesn’t want to revisit. Any suggestions of sweet tender women’s books that could just speak to her where she is right now and also not be “too intense” to receive from a random coworker?</p>
-            </div>
-            </div>
-            <div className="front-testimony" 
-            style={{ 
-            marginLeft: 'auto', 
-            marginRight: 'auto', 
-            marginBottom: '60px',
-            marginTop: '10px', 
-            alignContent: 'center', 
-            background: 'white', 
-            opacity: .5, 
-            width: '800px'
-            }}>  
-          <p className="text-center" style={{ color: 'black'}}>Author: Alyssa Hughey</p>
-          <div className="col-md-10">
-            <h1 className="lead" style={{ color: 'black'}}>My encouragement for you!</h1><hr />
-            <p className = "lead" 
-            style={{ color: 'black'}}>God is near to us, and in His joyous heart we get new strength. Praying for each one of you to see radical blessings and increase of breakthrough come into your life. We all belong to God's family, which means we belong to each other.</p>
-            </div>
-            </div>
+
+<div class="carousel-container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src={require('../Img/lights.png')} alt="Cam" style={{ width: "100%;"}}/>
+        < div class = "carousel-caption" >
+          <h5>Anonymous User</h5>
+          <p> "God is near to us, and in His joyous heart we get new strength.Praying
+          for each one of you to see radical blessings and increase of breakthrough come into your life.We all belong to God 's family, which means we belong to each other."</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src={require('../Img/lights.png')} alt="Chicago" style={{ width: "100%;"}}/>
+        <div class="carousel-caption">
+          <h5>Anonymous User</h5>
+          <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led.. the Lord put a specific time in our hearts and sure enough we got pregnant with our son that very week. In two weeks from now he turns 5 years old and is such a gift to our family. Since then we’ve had two other beautiful children and we look forward to more if God wills it. He is our healer! He is faithful; He keeps His promises!"</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src={require('../Img/lights.png')} alt="New York" style={{ width: "100%;"}}/>
+        <div class="carousel-caption">
+          <h5>Anonymous User</h5>
+          < p > I recently got my first gig doing web development!Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify.Although very basic, I 'm getting paid AND I can use it in my portfolio later on. God is always looking to give us opportunities, be expectant!</p>
+        </div>
+      </div>
+  
+    </div>
+
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
             </div>
           </div>
         </div>
