@@ -192,7 +192,7 @@
    height: auto !important;
  }
  .carousel-caption {
-   margin-top: 50px;
+   padding-top: 50px;
    display: block;
    max-width: 100%;
    height: 100% !important;
