@@ -44,7 +44,7 @@ class Landing extends Component {
         <img src={require('../Img/lights.png')} alt="Cam" style={{ width: "100%;"}}/>
         < div className = "carousel-caption" >
           <h5>Anonymous User</h5>
-          <p> "God is near to us, and in His joyous heart we get new strength.Praying
+          <p> "God is near to us, and in His joyous heart we get new strength. Praying
           for each one of you to see radical blessings and increase of breakthrough come into your life.We all belong to God 's family, which means we belong to each other."</p>
         </div>
       </div>
@@ -61,7 +61,7 @@ class Landing extends Component {
         <img src={require('../Img/lights.png')} alt="New York" style={{ width: "100%;"}}/>
         <div className="carousel-caption">
           <h5>Anonymous User</h5>
-          <p> "I recently got my first gig doing web development!Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify.Although very basic, I 'm getting paid AND I can use it in my portfolio later on..."</p>
+          <p> "I recently got my first gig doing web development! Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify. Although very basic, I 'm getting paid AND I can use it in my portfolio later on..."</p>
         </div>
       </div>
   
