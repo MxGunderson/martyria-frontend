@@ -43,7 +43,7 @@ class Landing extends Component {
       <div className="item active">
         <img src={require('../Img/lights.png')} alt="Cam" style={{ width: "100%;"}}/>
         < div className = "carousel-caption" >
-          <h5>Anonymous User</h5>
+          <h5>Alyssa</h5>
           <p> "God is near to us, and in His joyous heart we get new strength. Praying
           for each one of you to see radical blessings and increase of breakthrough come into your life.We all belong to God 's family, which means we belong to each other."</p>
         </div>
@@ -52,7 +52,7 @@ class Landing extends Component {
       <div className="item">
         <img src={require('../Img/lights.png')} alt="Chicago" style={{ width: "100%;"}}/>
         <div className="carousel-caption">
-          <h5>Anonymous User</h5>
+          <h5>Elena</h5>
           <p>"6 years ago my husband and I were praying for healing because we hadn’t been able to get pregnant after years of trying. After a long process of praying, crying out to God, surrendering, remaining at peace and in faith, stepping out for more prayer when led..."</p><br/>
         </div>
       </div>
@@ -60,7 +60,7 @@ class Landing extends Component {
       <div className="item">
         <img src={require('../Img/lights.png')} alt="New York" style={{ width: "100%;"}}/>
         <div className="carousel-caption">
-          <h5>Anonymous User</h5>
+          <h5>Brandon</h5>
           <p> "I recently got my first gig doing web development! Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify. Although very basic, I 'm getting paid AND I can use it in my portfolio later on..."</p>
         </div>
       </div>
