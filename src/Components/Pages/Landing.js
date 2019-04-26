@@ -15,7 +15,7 @@ class Landing extends Component {
                 <h3 className="display-3 mb-4" style={{color: '#EFEDE1'}}>Welcome To Martyria</h3>
                 <p className="lead" style={{color: '#EFEDE1'}}>
                  
-                  Signup to share testimonies
+                  Sign-up to share testimonies
                   and be encouraged in the goodness of God!
                 </p>
                 <hr />
@@ -60,7 +60,7 @@ class Landing extends Component {
       <div className="item">
         <img src={require('../Img/lights.png')} alt="New York" style={{ width: "100%;"}}/>
         <div className="carousel-caption">
-          <h5>Brandon</h5>
+          <h5>Branden</h5>
           <p> "I recently got my first gig doing web development! Someone in my church started a business and I charged them $100 to make a static info site with html, css, and Netlify. Although very basic, I 'm getting paid AND I can use it in my portfolio later on..."</p>
         </div>
       </div>
