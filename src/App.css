@@ -206,4 +206,7 @@
    align-content: center;
    padding-left: 60px;
  }
+ .login-error {
+   color: rgb(209, 24, 24);
+ }
 }

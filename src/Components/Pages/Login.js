@@ -11,7 +11,7 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: {},
     };
 
     this.onChange = this.onChange.bind(this);
@@ -30,7 +30,11 @@ class Login extends Component {
     }
 
     if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
+      this.setState({ errors: {
+        ...nextProps.errors,
+        password: true,
+        email: true
+      }});
     }
   }
 
@@ -66,10 +70,13 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+
+    console.log('errors: ', errors)
   
     return (
       <div className="landing">
         <div className="dark-overlay landing-inner text-light">
+        
       <div className="login">
         <div className="container">
           <div className="row">
@@ -83,7 +90,7 @@ class Login extends Component {
                   value={this.state.email}
                   onChange={this.onChange}
                   error={errors.email}
-                />
+                  />
 
                 <TextFieldGroup
                   placeholder="Password"
@@ -92,8 +99,11 @@ class Login extends Component {
                   value={this.state.password}
                   onChange={this.onChange}
                   error={errors.password}
-                />
+                  />
                 <input type="submit" style={{background: '#EFEDE1', color: 'black'}} className="btn btn-info btn-block mt-4" />
+                                    {errors && errors.response && (
+                                      <h5 className="login-error">Error, username or password incorrect!</h5>
+                                    )}
               </form>
             </div>
           </div>
