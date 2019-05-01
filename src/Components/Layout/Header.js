@@ -22,7 +22,7 @@ class Header extends Component {
     const authLinks = (
       <div className="container-header">
         <div className="header">
-
+          <NavItem href='/authlanding' >Home</NavItem>
           <NavItem href='/contact'>Meet The Team</NavItem>
           <NavItem href='/about'>About</NavItem>
           <NavItem href='/feed'>Testimonies</NavItem>

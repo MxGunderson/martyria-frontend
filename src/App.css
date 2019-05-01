@@ -23,10 +23,9 @@
     background: url("./Components/Img/camera-lens-clouds-hand-1208074.jpg")
       no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
     height: 250vh;
-    margin-top: 0px;
-    /* margin-bottom: -50px; */
   }
 
   .landing-inner {
@@ -36,17 +35,17 @@
   .feed {
     background-color: #414141;
     position: relative;
-
     background: url("./Components/Img/homeBanner.jpg");
-    background-repeat: space;
-
+    background-attachment: fixed;
     background-size: cover;
-    height: 100vh;
+    height: auto;
+    width: auto;
   }
 
   .dark-overlay {
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
+    background-attachment: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -55,6 +54,14 @@
 
   .card-form {
     opacity: 0.9;
+  }
+
+  .card.card-body {
+    background-color: black;
+    opacity: .6;
+    color: white;
+
+
   }
 
   .latest-profiles-img {
@@ -71,6 +78,7 @@
     clear: both;
     display: table;
   }
+
 
   [class*="col-"] {
     float: left;
@@ -127,9 +135,11 @@
   
   
   Footer {
-    position: fixed;
+    opacity: .5;
+    position: bottom;
     margin-left: 0;
     margin-bottom: 0px;
+    padding-bottom: 50px;
     right: 0;
     bottom: 0;
     width: 100%;
@@ -208,5 +218,32 @@
  }
  .login-error {
    color: rgb(209, 24, 24);
+   
  }
+
+.login-error {
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
 }

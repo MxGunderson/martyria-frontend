@@ -11,6 +11,7 @@ import store from './store';
 import PrivateRoute from './Components/common/PrivateRoute';
 
 import Landing from './Components/Pages/Landing';
+import AuthLanding from './Components/Pages/AuthLanding';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 import About from './Components/Pages/About';
@@ -62,6 +63,7 @@ class App extends Component {
           <div className="App">
             <Header />
             <Route exact path="/" component={Landing} />
+            <Route exact path="/authlanding" component={AuthLanding} />
             <Route path='/about' component={About} />
             <Route path='/contact' component={Contact} />
             <Route path='/login' component={Login} />

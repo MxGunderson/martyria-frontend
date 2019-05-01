@@ -72,11 +72,13 @@ class PostForm extends Component {
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
-          <div className='card' style={{background: '#4267B2', color: 'white', textAlign: 'center', fontSize: '1.5em'}}>Share A Testimony</div>
+          <div className='card' style={{background: '#12519D', opacity: .7, color: 'white', textAlign: 'center', fontSize: '1.5em'}}>Share a Testimony</div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
+             
                 <TextInputGroup
+                  label="Author"
                   placeholder="Author"
                   type="author"
                   name="author"
@@ -84,7 +86,9 @@ class PostForm extends Component {
                   onChange={this.onChange}
                   error={errors.author}
                 />
+
                 <TextInputGroup
+                  label="Title"
                   placeholder="Title"
                   type="title"
                   name="title"
@@ -92,8 +96,10 @@ class PostForm extends Component {
                   onChange={this.onChange}
                   error={errors.title}
                 />
+
                 <TextAreaFieldGroup
-                  placeholder="Share A Testimony"
+                  label="Share a Testimony"
+                  placeholder="Share a Testimony"
                   name="story"
                   value={this.state.story}
                   onChange={this.onChange}

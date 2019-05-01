@@ -35,7 +35,7 @@ class PostItem extends Component {
                   style={{ 
                     cursor: 'pointer', 
                     float: 'left', 
-                    color: 'black', 
+                    color: 'white', 
                     marginRight: '1rem', 
                     marginTop: '1rem' 
                     }} />
