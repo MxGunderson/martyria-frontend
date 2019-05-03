@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import TextInputGroup from '../Layout/TextInputGroup';
 import { getPost, updatePost } from '../../actions/postActions';
@@ -110,9 +111,13 @@ class EditPost extends Component {
                     onChange={this.onChange}
                     error={errors.story}
                   />
-                  <input type="submit" value="Update Post" className="btn btn-light btn-block" style={{ background: '#4267B2' }} />
+                  <input type="submit" value="Update Post" className="btn btn-light btn-block" style={{ background: '#4267B2' }} /><br/>
 
                 </div>
+                    <p style={{color:"darkgrey"}}>Sorry!!! You cannot edit or delete your testimony just yet!</p>
+                    <Link to="/feed" className="btn btn-lg btn-info mr-2" style={{background: '#EFEDE1', color: 'black'}}>
+                  Back To Testimonies
+                </Link>
               </form>
             </div>
 
