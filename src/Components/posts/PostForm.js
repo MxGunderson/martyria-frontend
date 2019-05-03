@@ -122,7 +122,7 @@ class PostForm extends Component {
               <p 
                 className="max-count" 
                 style={{color: "darkgrey"}}
-                >Maximum Characters = 4000</p>
+                >Max Characters: 4000</p>
               </div>
 
 
