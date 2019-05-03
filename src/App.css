@@ -216,6 +216,17 @@
    align-content: center;
    padding-left: 60px;
  }
+
+.counter{
+  color: darkgrey;
+  float: right;
+  margin-right: 2.5em;
+  /* float: right; */
+  margin-bottom: 20px;
+}
+
+
+
  .login-error {
    color: rgb(209, 24, 24);
    

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import TextInputGroup from '../Layout/TextInputGroup';
 import { addPost } from '../../actions/postActions';
+import CharacterCounter from 'react-character-counter'
 
 class PostForm extends Component {
   constructor(props) {
@@ -66,6 +67,12 @@ class PostForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+   handleChange(event) {
+     this.setState({
+       length: event.target.value.length
+     });
+   }
+
   render() {
     const { errors } = this.state;
 
@@ -96,7 +103,6 @@ class PostForm extends Component {
                   onChange={this.onChange}
                   error={errors.title}
                 />
-
                 <TextAreaFieldGroup
                   label="Share a Testimony"
                   placeholder="Share a Testimony"
@@ -104,8 +110,22 @@ class PostForm extends Component {
                   value={this.state.story}
                   onChange={this.onChange}
                   error={errors.story}
+                  maxLength={3000}
                 />
+              <div className="counter">
+                <CharacterCounter 
+                value={this.state.story} 
+                maxLength={4000}
+                >
+                </CharacterCounter><br/>
               </div>
+              <p 
+                className="max-count" 
+                style={{color: "darkgrey"}}
+                >Maximum Characters = 4000</p>
+              </div>
+
+
               <button type="submit" className="btn btn-dark" style={{background: '#5C5D5F', color: 'white'}}>
                 Submit
               </button>
@@ -120,7 +140,8 @@ class PostForm extends Component {
 PostForm.propTypes = {
   addPost: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
+  maxLength: PropTypes.number
 };
 
 const mapStateToProps = state => ({
